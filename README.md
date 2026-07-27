@@ -36,7 +36,7 @@ python3 -m http.server 8000
 |------|------|------|
 | Numero WhatsApp | `wa.me/39XXXXXXXXXX` (compare 4 volte) | Sostituisci con il numero reale in formato internazionale senza `+` |
 | Email / telefono footer | sezione `<footer>` | `info@esteticaclienti.it`, `+39 XXX XXX XXXX` |
-| Video testimonianze | sezione `#testimonianze` | Sostituisci i placeholder con `<iframe>` YouTube reali |
+| Recap chat WhatsApp | sezione `#whatsapp` | Mockup dei messaggi giornalieri: personalizza nomi/orari o sostituisci con screenshot reali |
 | Foto/nomi team | sezione `#team` | Inserisci foto reali (sostituendo il cerchio con le iniziali) |
 | Foto trattamenti | sezione `#verticali`/servizi | Sostituisci i gradienti `.fig-a/.fig-b/.fig-c` con immagini reali |
 | Numeri risultati | (rimossi in questa versione, riattivabili) | — |

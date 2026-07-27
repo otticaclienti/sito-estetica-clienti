@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Estetica Clienti — Network di centri specializzati in estetica avanzata</title>
-<meta name="description" content="Estetica Clienti è il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso. Ricevi nuove clienti già qualificate, con garanzia scritta." />
+<meta name="description" content="Estetica Clienti è il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso. Nuove clienti già qualificate, con garanzia di 3 mesi." />
 <meta name="theme-color" content="#F6F0E8" />
 <meta property="og:title" content="Estetica Clienti — Network di centri specializzati in estetica avanzata" />
 <meta property="og:description" content="Diventa il centro di riferimento della tua zona per epilazione laser, rimodellamento corpo e anti-age viso. Candidatura gratuita e senza impegno." />
@@ -13,7 +13,7 @@
 <style>
   /* ============ RESET ============ */
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   img{max-width:100%;display:block}
   a{color:inherit;text-decoration:none}
   button{font:inherit;color:inherit;cursor:pointer;border:none;background:none}
@@ -22,268 +22,303 @@
   /* ============ TOKENS (brand: crema / nero / rosa cipria / oro) ============ */
   :root{
     --cream:#F6F0E8; --cream-2:#EFE6DA; --ivory:#FBF7F1;
-    --ink:#1C1A1B; --rose:#BE7C88; --rose-deep:#A45E6C; --gold:#B08D57;
-    --plum:#3B2A30; --plum-deep:#2E2026;
+    --ink:#191517; --rose:#BE7C88; --rose-deep:#9E5462; --gold:#A9814F;
+    --plum:#3B2A30; --plum-deep:#2C1E24;
+    --red:#C0564F; --red-soft:#F6E4E2; --ok:#1F8A5B; --ok-soft:#E3F1EA;
 
     --bg:var(--cream); --bg-alt:var(--ivory); --surface:#FFFFFF;
-    --text:var(--ink); --muted:#6E6157; --line:rgba(28,26,27,.12);
+    --text:#231C1F; --muted:#5A4C46; --line:rgba(25,21,23,.14);
     --accent:var(--rose); --accent-strong:var(--rose-deep); --hair:var(--gold);
-    --shadow:0 20px 55px -28px rgba(59,42,48,.35);
+    --shadow:0 20px 50px -26px rgba(59,42,48,.4);
 
-    --maxw:1160px; --pad:clamp(1.25rem,5vw,3rem); --r:14px;
+    --maxw:1160px; --pad:clamp(1.1rem,4.5vw,3rem); --r:14px;
     --serif:'Cormorant Garamond','Didot','Bodoni MT',Georgia,'Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
   }
   @media (prefers-color-scheme:dark){
     :root{
-      --bg:#201A1C; --bg-alt:#241D20; --surface:#2A2225; --text:#F3EAE3;
-      --muted:#B7A69D; --line:rgba(243,234,227,.14);
-      --accent:#D49BA5; --accent-strong:#E0AEB6; --hair:#C6A16E;
-      --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+      --bg:#201A1C; --bg-alt:#241D20; --surface:#2A2225; --text:#F4ECE6;
+      --muted:#C5B4AB; --line:rgba(244,236,230,.16);
+      --accent:#D89AA4; --accent-strong:#E6AEB7; --hair:#C6A16E;
+      --red:#E88B84; --red-soft:rgba(192,86,79,.18); --ok:#5FC495; --ok-soft:rgba(31,138,91,.2);
+      --shadow:0 24px 60px -30px rgba(0,0,0,.72);
     }
   }
   :root[data-theme="light"]{
-    --bg:var(--cream);--bg-alt:var(--ivory);--surface:#FFFFFF;--text:var(--ink);
-    --muted:#6E6157;--line:rgba(28,26,27,.12);--accent:var(--rose);--accent-strong:var(--rose-deep);--hair:var(--gold);
-    --shadow:0 20px 55px -28px rgba(59,42,48,.35);
+    --bg:var(--cream);--bg-alt:var(--ivory);--surface:#FFFFFF;--text:#231C1F;
+    --muted:#5A4C46;--line:rgba(25,21,23,.14);--accent:var(--rose);--accent-strong:var(--rose-deep);--hair:var(--gold);
+    --red:#C0564F;--red-soft:#F6E4E2;--ok:#1F8A5B;--ok-soft:#E3F1EA;--shadow:0 20px 50px -26px rgba(59,42,48,.4);
   }
   :root[data-theme="dark"]{
-    --bg:#201A1C;--bg-alt:#241D20;--surface:#2A2225;--text:#F3EAE3;
-    --muted:#B7A69D;--line:rgba(243,234,227,.14);--accent:#D49BA5;--accent-strong:#E0AEB6;--hair:#C6A16E;
-    --shadow:0 24px 60px -30px rgba(0,0,0,.7);
+    --bg:#201A1C;--bg-alt:#241D20;--surface:#2A2225;--text:#F4ECE6;
+    --muted:#C5B4AB;--line:rgba(244,236,230,.16);--accent:#D89AA4;--accent-strong:#E6AEB7;--hair:#C6A16E;
+    --red:#E88B84;--red-soft:rgba(192,86,79,.18);--ok:#5FC495;--ok-soft:rgba(31,138,91,.2);--shadow:0 24px 60px -30px rgba(0,0,0,.72);
   }
 
   /* ============ BASE ============ */
   body{background:var(--bg);color:var(--text);font-family:var(--sans);
-    line-height:1.65;font-size:clamp(1rem,.5vw + .9rem,1.06rem);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    line-height:1.62;font-size:clamp(1rem,.5vw + .9rem,1.075rem);font-weight:450;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
-  section{padding-block:clamp(3.5rem,8vw,6.5rem)}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.06;text-wrap:balance}
-  h1{font-size:clamp(2.3rem,5.6vw,4.3rem);letter-spacing:.005em}
-  h2{font-size:clamp(2rem,4.4vw,3.3rem);letter-spacing:.005em}
-  h3{font-size:clamp(1.25rem,2vw,1.55rem);font-weight:600}
+  section{padding-block:clamp(3rem,7vw,5.5rem)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balance}
+  h1{font-size:clamp(2.25rem,5.4vw,4.1rem);letter-spacing:.004em}
+  h2{font-size:clamp(1.95rem,4.2vw,3.15rem);letter-spacing:.004em}
+  h3{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:700}
   .display-upper{text-transform:uppercase;letter-spacing:.02em}
-  .accent{color:var(--accent)}
+  .accent{color:var(--accent-strong)}
   p{max-width:64ch}
-  .eyebrow{font-family:var(--sans);font-size:.72rem;font-weight:700;letter-spacing:.28em;
+  strong{font-weight:700;color:var(--text)}
+  .eyebrow{font-family:var(--sans);font-size:.74rem;font-weight:800;letter-spacing:.22em;
     text-transform:uppercase;color:var(--accent-strong);display:inline-flex;align-items:center;gap:.7rem}
-  .eyebrow::before{content:"";width:30px;height:1px;background:var(--hair)}
-  .lead{font-size:clamp(1.05rem,1.4vw,1.28rem);color:var(--muted)}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--hair)}
+  .lead{font-size:clamp(1.05rem,1.4vw,1.24rem);color:var(--muted);font-weight:500}
   .rule{display:flex;align-items:center;gap:.8rem;color:var(--hair)}
   .rule::before,.rule::after{content:"";height:1px;background:var(--hair);flex:1;opacity:.7}
   .rule i{width:6px;height:6px;border-radius:50%;background:var(--hair);flex:none}
 
   /* ============ BUTTONS ============ */
-  .btn{display:inline-flex;align-items:center;gap:.55rem;padding:.9rem 1.6rem;border-radius:2px;
-    font-weight:600;font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;
-    transition:transform .18s,box-shadow .2s,background .2s,color .2s,border-color .2s;line-height:1}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.95rem 1.7rem;border-radius:3px;
+    font-weight:800;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;
+    transition:transform .16s,box-shadow .2s,background .2s,color .2s,border-color .2s;line-height:1;text-align:center}
   .btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .btn .arrow{transition:transform .16s}.btn:hover .arrow{transform:translateX(4px)}
   .btn-primary{background:var(--ink);color:var(--cream)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow);background:var(--rose-deep);color:#fff}
-  .btn-rose{background:var(--accent);color:#fff}
-  .btn-rose:hover{transform:translateY(-2px);box-shadow:0 16px 34px -16px var(--accent);background:var(--rose-deep)}
-  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-rose{background:var(--accent-strong);color:#fff}
+  .btn-rose:hover{transform:translateY(-2px);box-shadow:0 16px 34px -16px var(--accent-strong);background:#8a4655}
+  .btn-ghost{border:1.5px solid var(--line);color:var(--text)}
   .btn-ghost:hover{border-color:var(--accent);color:var(--accent-strong);transform:translateY(-2px)}
-  .btn-lg{padding:1.05rem 2rem;font-size:.9rem}
+  .btn-lg{padding:1.1rem 2.1rem;font-size:.92rem}
+  .btn-full{width:100%}
 
   /* ============ BRAND LOCKUP ============ */
   .brand{display:inline-flex;flex-direction:column;line-height:.94;font-family:var(--serif)}
-  .brand .l1,.brand .l2{font-size:1.02rem;letter-spacing:.34em;text-transform:uppercase;font-weight:600;padding-left:.34em}
-  .brand .l1{color:var(--text)}.brand .l2{color:var(--accent)}
-  .brand-lg .l1,.brand-lg .l2{font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:.3em}
-  .brand-tag{font-family:var(--sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:.9rem}
+  .brand .l1,.brand .l2{font-size:1.02rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;padding-left:.32em}
+  .brand .l1{color:var(--text)}.brand .l2{color:var(--accent-strong)}
+  .brand-lg .l1,.brand-lg .l2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:.3em}
+  .brand-tag{font-family:var(--sans);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:.9rem}
 
   /* ============ NAV ============ */
   header.nav{position:sticky;top:0;z-index:60;backdrop-filter:saturate(1.3) blur(10px);
-    background:color-mix(in srgb,var(--bg) 82%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
+    background:color-mix(in srgb,var(--bg) 85%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
   header.nav.scrolled{border-bottom-color:var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.9rem}
-  .nav-links{display:none;gap:1.7rem;align-items:center}
-  .nav-links a{font-size:.8rem;letter-spacing:.04em;color:var(--muted);transition:color .2s;text-transform:uppercase}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.75rem}
+  .nav-links{display:none;gap:1.6rem;align-items:center}
+  .nav-links a{font-size:.78rem;font-weight:700;letter-spacing:.04em;color:var(--muted);transition:color .2s;text-transform:uppercase}
   .nav-links a:hover{color:var(--text)}
-  .nav-cta{display:flex;align-items:center;gap:.7rem}
-  .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted)}
+  .nav-cta{display:flex;align-items:center;gap:.6rem}
+  .theme-toggle{width:38px;height:38px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;color:var(--muted);flex:none}
   .theme-toggle:hover{color:var(--text);border-color:var(--accent)}
   @media(min-width:1040px){.nav-links{display:flex}}
 
-  /* ============ HERO ============ */
+  /* ============ HERO (compact top) ============ */
   .hero{position:relative;overflow:hidden;background:
-      radial-gradient(120% 80% at 88% -20%,color-mix(in srgb,var(--rose) 26%,transparent),transparent 55%),
-      radial-gradient(90% 70% at -10% 120%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 55%),
+      radial-gradient(120% 75% at 88% -25%,color-mix(in srgb,var(--rose) 28%,transparent),transparent 55%),
+      radial-gradient(90% 65% at -10% 120%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 55%),
       var(--bg)}
-  .hero .wrap{padding-block:clamp(3rem,7vw,5.5rem)}
-  .hero h1{margin:1.1rem 0 1.3rem;max-width:18ch}
+  .hero .wrap{padding-block:clamp(1.4rem,3.5vw,3rem) clamp(2.6rem,6vw,4.5rem)}
+  .hero h1{margin:.85rem 0 1.15rem;max-width:19ch}
   .hero h1 .accent{font-style:italic}
-  .hero p{font-size:clamp(1.08rem,1.5vw,1.3rem);color:var(--muted);max-width:54ch}
-  .hero-cta{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.1rem}
+  .hero p{font-size:clamp(1.06rem,1.5vw,1.28rem);color:var(--muted);max-width:56ch;font-weight:500}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
 
   /* stat cards */
-  .stats{display:grid;gap:1.1rem;grid-template-columns:1fr}
+  .stats{display:grid;gap:.9rem;grid-template-columns:1fr}
   @media(min-width:640px){.stats{grid-template-columns:repeat(3,1fr)}}
   .stats.four{grid-template-columns:1fr 1fr}
   @media(min-width:820px){.stats.four{grid-template-columns:repeat(4,1fr)}}
-  .stat{padding:1.6rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:.35rem}
-  .stat .ico{color:var(--accent-strong);margin-bottom:.3rem}.stat .ico svg{width:24px;height:24px}
-  .stat .n{font-family:var(--serif);font-size:clamp(2rem,3.6vw,2.7rem);color:var(--accent-strong);font-variant-numeric:tabular-nums;line-height:1}
-  .stat .l{color:var(--muted);font-size:.86rem;text-transform:uppercase;letter-spacing:.04em}
-  .hero .stats{margin-top:2.8rem}
+  .stat{padding:1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:.3rem;box-shadow:var(--shadow)}
+  .stat .ico{color:var(--accent-strong);margin-bottom:.25rem}.stat .ico svg{width:23px;height:23px}
+  .stat .n{font-family:var(--serif);font-size:clamp(1.95rem,3.4vw,2.6rem);font-weight:700;color:var(--accent-strong);font-variant-numeric:tabular-nums;line-height:1}
+  .stat .l{color:var(--muted);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+  .hero .stats{margin-top:2.4rem}
 
   /* ============ SECTIONS ============ */
   .alt{background:var(--bg-alt)}
-  .sec-head{max-width:58ch;margin-bottom:clamp(2rem,4vw,3.2rem)}
+  .sec-head{max-width:60ch;margin-bottom:clamp(1.8rem,3.6vw,3rem)}
   .sec-head.center{text-align:center;margin-inline:auto}
   .sec-head.center .eyebrow{justify-content:center}
-  .sec-head h2{margin:.9rem 0 1rem}
+  .sec-head h2{margin:.85rem 0 1rem}
+  .pill{display:inline-flex;align-items:center;padding:.65rem 1.3rem;border-radius:999px;font-size:.72rem;font-weight:800;
+    letter-spacing:.12em;text-transform:uppercase;background:var(--accent-strong);color:#fff;box-shadow:0 8px 20px -10px var(--accent-strong)}
 
-  .grid{display:grid;gap:1.1rem}
+  .grid{display:grid;gap:1rem}
   .cols-3{grid-template-columns:1fr}
-  .cols-4{grid-template-columns:1fr}
-  @media(min-width:720px){.cols-3{grid-template-columns:repeat(3,1fr)}.cols-4{grid-template-columns:1fr 1fr}}
-  @media(min-width:1000px){.cols-4{grid-template-columns:repeat(4,1fr)}}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.7rem;
+  @media(min-width:760px){.cols-3{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;
     transition:transform .25s,box-shadow .25s,border-color .25s;position:relative}
   .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
   .card h3{margin-bottom:.5rem}
-  .card p{color:var(--muted);font-size:.96rem}
-  .card .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:1.1rem;
-    background:color-mix(in srgb,var(--accent) 15%,transparent);color:var(--accent-strong)}
+  .card p{color:var(--muted);font-size:.97rem;font-weight:500}
+  .card .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;margin-bottom:1rem;
+    background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent-strong)}
   .card .ico svg{width:24px;height:24px}
-  .card .num{position:absolute;top:1.3rem;right:1.5rem;font-family:var(--serif);font-size:1.5rem;color:var(--hair);opacity:.7}
+  .card .num{position:absolute;top:1.2rem;right:1.4rem;font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--hair);opacity:.75}
 
-  /* verticali */
+  /* specializzazioni (treatments) */
   .vert .card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-  .vert figure{aspect-ratio:4/3;position:relative}
-  .vert figure .tag{position:absolute;left:1rem;bottom:1rem;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--ink);background:color-mix(in srgb,var(--cream) 92%,white);padding:.4rem .8rem;border-radius:2px;font-weight:700}
-  .vert .card-body{padding:1.6rem}.vert .card-body p{color:var(--muted);font-size:.95rem}
+  .vert figure{aspect-ratio:5/3;position:relative}
+  .vert figure .tag{position:absolute;left:.9rem;bottom:.9rem;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink);background:color-mix(in srgb,var(--cream) 94%,white);padding:.4rem .8rem;border-radius:2px;font-weight:800}
+  .vert .card-body{padding:1.4rem}.vert .card-body p{color:var(--muted);font-size:.94rem;font-weight:500}
   .fig-a{background:linear-gradient(135deg,#E7C9CF,#BE7C88)}
   .fig-b{background:linear-gradient(135deg,#EFE1D2,#D8B48F)}
   .fig-c{background:linear-gradient(135deg,#E4D3D9,#B79AA6)}
-  .fig-note{position:absolute;inset:0;display:grid;place-items:center;color:rgba(28,26,27,.35);font-family:var(--serif);font-size:.85rem;letter-spacing:.1em;text-transform:uppercase}
-
-  /* testimonianze / video */
-  .videos{display:grid;gap:1.2rem}
-  @media(min-width:820px){.videos{grid-template-columns:1fr 1fr}}
-  .video-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
-  .video-label{display:flex;align-items:center;gap:.6rem;padding:1.05rem 1.3rem;font-weight:600;font-family:var(--serif);font-size:1.1rem;color:var(--text)}
-  .video-label svg{width:18px;height:18px;color:var(--accent-strong);flex:none}
-  .video-embed{aspect-ratio:16/9;background:
-      radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--rose) 20%,transparent),transparent 60%),
-      linear-gradient(160deg,var(--cream-2),#E0D3C4);display:grid;place-items:center;position:relative}
-  :root[data-theme="dark"] .video-embed{background:radial-gradient(circle at 50% 45%,color-mix(in srgb,var(--rose) 24%,transparent),transparent 60%),linear-gradient(160deg,#2A2225,#241D20)}
-  .video-embed .play{width:66px;height:66px;border-radius:50%;background:rgba(255,255,255,.9);display:grid;place-items:center;color:var(--rose-deep);box-shadow:var(--shadow)}
-  .video-embed .play svg{width:26px;height:26px;margin-left:3px}
-  .video-embed .ph{position:absolute;bottom:.8rem;left:.9rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .fig-note{position:absolute;inset:0;display:grid;place-items:center;color:rgba(25,21,23,.4);font-family:var(--serif);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600}
 
   /* steps */
-  .steps{display:grid;gap:1.6rem;counter-reset:step}
+  .steps{display:grid;gap:1.4rem;counter-reset:step}
   @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
-  .step{position:relative;padding-top:1.3rem;border-top:1px solid var(--line)}
+  .step{position:relative;padding-top:1.2rem;border-top:2px solid var(--line)}
   .step::before{counter-increment:step;content:counter(step,decimal-leading-zero);
-    font-family:var(--serif);font-size:2.3rem;color:var(--accent);display:block;margin-bottom:.4rem;line-height:1}
-  .step h3{font-size:1.12rem;margin-bottom:.4rem}
-  .step p{color:var(--muted);font-size:.92rem}
+    font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--accent-strong);display:block;margin-bottom:.4rem;line-height:1}
+  .step h3{font-size:1.1rem;margin-bottom:.4rem}
+  .step p{color:var(--muted);font-size:.94rem;font-weight:500}
 
-  /* infrastructure */
-  .infra{display:grid;gap:2.6rem;align-items:center}
-  @media(min-width:920px){.infra{grid-template-columns:1fr 1fr}}
-  .infra-list{display:grid;gap:.1rem}
-  .infra-list li{list-style:none;display:flex;gap:1rem;align-items:flex-start;padding:1.05rem 0;border-bottom:1px solid var(--line)}
-  .infra-list li:last-child{border-bottom:none}
-  .infra-list .chk{flex:none;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--accent) 16%,transparent);
-    color:var(--accent-strong);display:grid;place-items:center;margin-top:.1rem}
-  .infra-list .chk svg{width:16px;height:16px}
-  .infra-list b{display:block;font-weight:600}.infra-list span{color:var(--muted);font-size:.92rem}
-  .infra-visual{background:linear-gradient(158deg,var(--plum),var(--plum-deep));border-radius:calc(var(--r) + 6px);
-    padding:2rem;color:#F4E9EC;box-shadow:var(--shadow)}
-  .infra-visual .vhead{font-family:var(--sans);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,233,236,.6);margin-bottom:1rem}
-  .chatline{display:flex;gap:.7rem;align-items:flex-start;padding:.5rem 0}
-  .chatline .av{flex:none;width:34px;height:34px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.72rem;font-family:var(--serif);letter-spacing:.06em}
-  .chatline .bub{background:rgba(244,233,236,.10);border:1px solid rgba(244,233,236,.14);border-radius:12px;padding:.6rem .85rem;font-size:.9rem;color:rgba(244,233,236,.92);max-width:80%}
+  /* WhatsApp / chat */
+  .chatwrap{display:grid;gap:2.4rem;align-items:center}
+  @media(min-width:920px){.chatwrap{grid-template-columns:1fr 1fr}}
+  .chat-list{display:grid;gap:.9rem;margin-top:1.4rem}
+  .chat-list li{list-style:none;display:flex;gap:.9rem;align-items:flex-start;font-weight:500;color:var(--text)}
+  .chat-list .chk{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ok-soft);color:var(--ok);display:grid;place-items:center;margin-top:.1rem}
+  .chat-list .chk svg{width:15px;height:15px}
+  .phone{background:linear-gradient(158deg,var(--plum),var(--plum-deep));border-radius:26px;padding:1.4rem 1.15rem;color:#F4E9EC;box-shadow:var(--shadow);max-width:400px;margin-inline:auto;width:100%;border:6px solid #1c1216}
+  .phone-top{display:flex;align-items:center;gap:.6rem;padding:.2rem .3rem 1rem;border-bottom:1px solid rgba(244,233,236,.14);margin-bottom:.9rem}
+  .phone-av{width:36px;height:36px;border-radius:50%;background:var(--rose);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:.72rem;letter-spacing:.05em}
+  .phone-name{font-weight:700;font-size:.92rem}.phone-status{font-size:.7rem;color:rgba(244,233,236,.6)}
+  .day-sep{text-align:center;font-size:.66rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(244,233,236,.55);font-weight:700;margin:.7rem 0 .3rem}
+  .chatline{display:flex;gap:.5rem;align-items:flex-end;padding:.22rem 0}
+  .chatline .bub{border-radius:14px;padding:.55rem .8rem;font-size:.86rem;font-weight:500;line-height:1.45;max-width:82%;box-shadow:0 2px 6px rgba(0,0,0,.14)}
+  .chatline.them .bub{background:rgba(244,233,236,.12);border:1px solid rgba(244,233,236,.14);border-bottom-left-radius:4px;color:#F4E9EC}
   .chatline.me{flex-direction:row-reverse}
-  .chatline.me .bub{background:color-mix(in srgb,var(--rose) 45%,transparent);border-color:color-mix(in srgb,var(--rose) 55%,transparent);color:#fff}
+  .chatline.me .bub{background:#2f6b4f;border-bottom-right-radius:4px;color:#eafff4}
+  .chatline .bub b{color:#fff;font-weight:800}
+  .chatline .bub .t{display:block;font-size:.6rem;color:rgba(255,255,255,.5);text-align:right;margin-top:.2rem}
 
-  /* garanzia (two columns: promise + contract) */
-  .guarantee{background:
+  /* comparison */
+  .compare{display:grid;gap:1.1rem;margin-top:.5rem}
+  @media(min-width:860px){.compare{grid-template-columns:1fr 1fr}}
+  .cmp-card{border-radius:calc(var(--r) + 4px);padding:1.9rem 1.7rem;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+  .cmp-them{background:var(--red-soft);border-color:color-mix(in srgb,var(--red) 30%,transparent)}
+  .cmp-head{display:flex;align-items:center;gap:.8rem;padding-bottom:1rem;margin-bottom:1rem;border-bottom:1px solid var(--line)}
+  .cmp-badge{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;font-weight:900;font-size:1.1rem;color:#fff;flex:none}
+  .cmp-badge.ok{background:var(--ok)}.cmp-badge.no{background:var(--red)}
+  .cmp-title{font-family:var(--serif);font-size:1.4rem;font-weight:700}
+  .cmp-title.no{color:var(--red)}
+  .cmp-list{list-style:none;display:grid;gap:1rem}
+  .cmp-list li{display:grid;grid-template-columns:24px 1fr;gap:.8rem;align-items:start}
+  .cmp-ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:11px;margin-top:2px}
+  .cmp-ic.ok{background:var(--ok-soft);color:var(--ok)}.cmp-ic.no{background:var(--red-soft);color:var(--red)}
+  .cmp-list b{font-weight:800;color:var(--text)}
+  .cmp-list span{display:block;color:var(--muted);font-size:.9rem;font-weight:500;margin-top:.1rem}
+
+  /* garanzia */
+  .guar-grid{display:grid;gap:1.4rem;align-items:stretch}
+  @media(min-width:900px){.guar-grid{grid-template-columns:1.05fr .95fr}}
+  .guar{background:
       radial-gradient(100% 130% at 100% 0,color-mix(in srgb,var(--rose) 30%,transparent),transparent 55%),
       linear-gradient(158deg,var(--plum),var(--plum-deep));
-    color:#F4E9EC;border-radius:calc(var(--r) + 8px);padding:clamp(1.6rem,4vw,3rem);box-shadow:var(--shadow)}
-  .guarantee .eyebrow{color:#E7B9C1}.guarantee .eyebrow::before{background:var(--gold)}
-  .guar-grid{display:grid;gap:2rem;align-items:stretch;margin-top:1.6rem}
-  @media(min-width:900px){.guar-grid{grid-template-columns:1fr 1fr}}
-  .guar-text h2{margin:0 0 1rem}
-  .guar-text p{color:rgba(244,233,236,.86);margin-bottom:.8rem}
-  .guar-text .btn-rose{margin-top:1rem}
-  .contract{background:rgba(251,247,241,.06);border:1px solid rgba(244,233,236,.18);border-radius:var(--r);padding:1.6rem}
-  .contract-head{display:flex;align-items:center;gap:.7rem;padding-bottom:1rem;margin-bottom:1rem;border-bottom:1px solid rgba(244,233,236,.16)}
-  .contract-head svg{width:22px;height:22px;color:#E7B9C1}
-  .contract-head h4{font-family:var(--serif);font-size:1.2rem;color:#F4E9EC}
-  .contract p{font-size:.82rem;line-height:1.6;color:rgba(244,233,236,.72);margin-bottom:.7rem}
+    color:#F4E9EC;border-radius:calc(var(--r) + 8px);padding:clamp(1.7rem,4vw,3rem);box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .guar .eyebrow{color:#EDBEC6}.guar .eyebrow::before{background:var(--gold)}
+  .guar h2{color:#fff;margin:.9rem 0 1rem}
+  .guar p{color:rgba(244,233,236,.9);font-weight:500}
+  .shield{width:60px;height:60px;border-radius:15px;background:rgba(244,233,236,.12);display:grid;place-items:center;margin-bottom:.4rem}
+  .shield svg{width:30px;height:30px;color:#EDBEC6}
+  .quote{margin:1.2rem 0;background:rgba(251,247,241,.08);border-left:3px solid var(--gold);border-radius:8px;padding:1rem 1.2rem;font-family:var(--serif);font-size:1.15rem;font-style:italic;color:#fff}
+  .guar .btn{margin-top:auto}
+  .riconv{background:var(--surface);border:1px solid var(--line);border-radius:calc(var(--r) + 8px);padding:clamp(1.7rem,4vw,2.6rem);box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .riconv-head{display:inline-flex;align-items:center;gap:.55rem;color:var(--ok);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:1rem}
+  .riconv-head svg{width:22px;height:22px}
+  .riconv h3{margin-bottom:.7rem}
+  .riconv p{color:var(--muted);font-weight:500}
+  .credit{background:var(--ok-soft);border-radius:12px;padding:1rem 1.1rem;margin:1.1rem 0;display:flex;align-items:center;gap:.9rem;font-weight:700;color:var(--text)}
+  .credit .euro{width:36px;height:36px;border-radius:50%;background:var(--ok);color:#fff;display:grid;place-items:center;font-weight:900;font-size:1.1rem;flex:none}
 
   /* team */
-  .team{display:grid;gap:1.4rem;grid-template-columns:1fr}
+  .team{display:grid;gap:1.2rem;grid-template-columns:1fr}
   @media(min-width:640px){.team{grid-template-columns:repeat(3,1fr)}}
-  .team-card{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:2rem 1.4rem;transition:transform .25s,box-shadow .25s}
+  .team-card{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:2rem 1.3rem;transition:transform .25s,box-shadow .25s}
   .team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-  .team-photo{width:104px;height:104px;border-radius:50%;margin:0 auto 1.1rem;display:grid;place-items:center;
-    background:linear-gradient(140deg,var(--cream-2),var(--rose));color:#fff;font-family:var(--serif);font-size:1.9rem;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
-  .team-name{font-size:1.2rem;margin-bottom:.2rem}
-  .team-role{color:var(--accent-strong);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em}
+  .team-photo{width:96px;height:96px;border-radius:50%;margin:0 auto 1rem;display:grid;place-items:center;
+    background:linear-gradient(140deg,var(--cream-2),var(--rose));color:#fff;font-family:var(--serif);font-size:1.7rem;font-weight:700;box-shadow:0 0 0 1px var(--line)}
+  .team-name{font-size:1.15rem;margin-bottom:.2rem}
+  .team-role{color:var(--accent-strong);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 
   /* FAQ */
-  .faq{display:grid;gap:.8rem;max-width:840px}
+  .faq{display:grid;gap:.7rem;max-width:840px}
   details{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:0 1.3rem;transition:border-color .2s}
   details[open]{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
-  summary{list-style:none;cursor:pointer;padding:1.2rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:600;font-family:var(--serif);font-size:1.14rem}
+  summary{list-style:none;cursor:pointer;padding:1.15rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-weight:700;font-family:var(--serif);font-size:1.16rem}
   summary::-webkit-details-marker{display:none}
-  summary .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:transform .25s,background .2s;color:var(--accent-strong)}
+  summary .plus{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:transform .25s,background .2s;color:var(--accent-strong);font-weight:700}
   details[open] summary .plus{transform:rotate(45deg);background:color-mix(in srgb,var(--accent) 15%,transparent)}
-  details p{color:var(--muted);padding-bottom:1.25rem;font-size:.97rem}
+  details p{color:var(--muted);padding-bottom:1.2rem;font-size:.98rem;font-weight:500}
 
-  /* apply */
-  .apply-grid{display:grid;gap:2.6rem}
+  /* candidatura */
+  .apply-grid{display:grid;gap:2.4rem}
   @media(min-width:920px){.apply-grid{grid-template-columns:1fr 1fr;align-items:start}}
+  .steps-row{display:grid;gap:.8rem;margin:1.4rem 0}
+  .step-mini{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:.9rem 1.1rem;display:flex;align-items:center;gap:.9rem;font-weight:600;color:var(--text);font-size:.95rem}
+  .step-mini .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent-strong);color:#fff;display:grid;place-items:center;font-weight:900;font-size:.9rem}
   form{background:var(--surface);border:1px solid var(--line);border-radius:calc(var(--r) + 4px);padding:clamp(1.5rem,3vw,2.3rem);box-shadow:var(--shadow)}
-  .field{margin-bottom:1.05rem}
-  label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.45rem;color:var(--muted)}
-  input,select,textarea{width:100%;padding:.82rem .95rem;background:var(--bg);border:1px solid var(--line);border-radius:8px;transition:border-color .2s}
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent)}
-  .field-row{display:grid;gap:1.05rem}
+  .field{margin-bottom:1rem}
+  label{display:block;font-size:.78rem;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin-bottom:.45rem;color:var(--muted)}
+  input,select,textarea{width:100%;padding:.85rem .95rem;background:var(--bg);border:1.5px solid var(--line);border-radius:9px;transition:border-color .2s,box-shadow .2s;font-weight:500;font-size:16px}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+  .field-row{display:grid;gap:1rem}
   @media(min-width:520px){.field-row{grid-template-columns:1fr 1fr}}
-  .form-note{font-size:.8rem;color:var(--muted);margin-top:.9rem}
-  ul.perks{display:grid;gap:.9rem;margin-top:1.6rem}
-  ul.perks li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--muted)}
+  .form-note{font-size:.8rem;color:var(--muted);margin-top:.9rem;font-weight:500}
+  ul.perks{display:grid;gap:.85rem;margin-top:1.4rem}
+  ul.perks li{list-style:none;display:flex;gap:.7rem;align-items:flex-start;color:var(--muted);font-weight:500}
   ul.perks .chk{color:var(--accent-strong);flex:none;margin-top:.15rem}
 
   /* footer */
-  footer{background:var(--plum-deep);color:rgba(244,233,236,.72);padding-block:3.2rem}
+  footer{background:var(--plum-deep);color:rgba(244,233,236,.8);padding-block:3rem}
   .foot-grid{display:grid;gap:2rem}
-  @media(min-width:720px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
-  footer .brand .l1{color:#F4E9EC}footer .brand .l2{color:#E7B9C1}
-  footer a:hover{color:#E7B9C1}
-  .foot-title{font-family:var(--serif);font-size:1.1rem;color:#F4E9EC;margin-bottom:.9rem}
-  .foot-col p{font-size:.92rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
-  .foot-social{display:flex;gap:.7rem}
-  .foot-social a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(244,233,236,.2);display:grid;place-items:center;transition:border-color .2s,color .2s}
-  .foot-social a:hover{border-color:#E7B9C1;color:#E7B9C1}.foot-social svg{width:17px;height:17px}
-  .foot-legal{margin-top:2.2rem;padding-top:1.6rem;border-top:1px solid rgba(244,233,236,.14);font-size:.8rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem}
+  @media(min-width:720px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr}}
+  footer .brand .l1{color:#F4E9EC}footer .brand .l2{color:#EDBEC6}
+  footer a:hover{color:#EDBEC6}
+  .foot-title{font-family:var(--serif);font-size:1.05rem;color:#F4E9EC;font-weight:700;margin-bottom:.85rem}
+  .foot-col p{font-size:.92rem;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem;font-weight:500}
+  .foot-social{display:flex;gap:.6rem}
+  .foot-social a{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(244,233,236,.22);display:grid;place-items:center;transition:border-color .2s,color .2s}
+  .foot-social a:hover{border-color:#EDBEC6;color:#EDBEC6}.foot-social svg{width:17px;height:17px}
+  .foot-legal{margin-top:2rem;padding-top:1.4rem;border-top:1px solid rgba(244,233,236,.16);font-size:.8rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.7rem;font-weight:500}
 
   /* whatsapp float */
-  .wa-float{position:fixed;right:1.1rem;bottom:1.1rem;z-index:70;display:inline-flex;align-items:center;gap:.6rem;
-    background:#25D366;color:#0b3d24;font-weight:700;padding:.85rem 1.15rem;border-radius:999px;
-    box-shadow:0 14px 34px -12px rgba(0,0,0,.45);transition:transform .2s}
+  .wa-float{position:fixed;right:1rem;bottom:1rem;z-index:70;display:inline-flex;align-items:center;gap:.55rem;
+    background:#25D366;color:#0b3d24;font-weight:800;padding:.85rem 1.1rem;border-radius:999px;
+    box-shadow:0 14px 32px -12px rgba(0,0,0,.5);transition:transform .2s;font-size:.9rem}
   .wa-float:hover{transform:translateY(-3px)}
   .wa-float svg{width:22px;height:22px}.wa-float .lbl{display:none}
   @media(min-width:600px){.wa-float .lbl{display:inline}}
 
   /* reveal */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){
     .reveal{opacity:1 !important;transform:none !important;transition:none}
     *{scroll-behavior:auto !important}.btn,.card,.wa-float,.team-card{transition:none}
   }
-  html{scroll-behavior:smooth}:target{scroll-margin-top:90px}
+  :target{scroll-margin-top:80px}
+
+  /* ============ MOBILE OPTIMISATION ============ */
+  @media(max-width:640px){
+    body{font-weight:500}
+    section{padding-block:2.6rem}
+    .hero .wrap{padding-block:1.1rem 2.4rem}
+    .hero h1{margin:.7rem 0 1rem}
+    p{font-weight:500}
+    .card p,.step p,.vert .card-body p,.cmp-list span,.riconv p,.guar p{font-weight:500}
+    .muted,.lead{color:var(--muted)}
+    .btn{width:100%;max-width:420px}
+    .hero-cta{width:100%}
+    .stat{padding:1.2rem}
+    .cmp-card{padding:1.5rem 1.3rem}
+    .phone{border-width:5px;padding:1.15rem .9rem}
+    .foot-legal{flex-direction:column}
+  }
 </style>
 </head>
 <body>
@@ -293,18 +328,18 @@
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Estetica Clienti — home"><span class="l1">Estetica</span><span class="l2">Clienti</span></a>
     <nav class="nav-links" aria-label="Principale">
+      <a href="#specializzazioni">Trattamenti</a>
       <a href="#metodo">Come funziona</a>
-      <a href="#testimonianze">Testimonianze</a>
+      <a href="#whatsapp">Il servizio</a>
       <a href="#garanzia">Garanzia</a>
-      <a href="#servizi">Servizi</a>
       <a href="#team">Il team</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
       <button class="theme-toggle" id="themeBtn" aria-label="Cambia tema chiaro/scuro" title="Cambia tema">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       </button>
-      <a class="btn btn-primary" href="#candidatura">Candidatura gratuita</a>
+      <a class="btn btn-primary" href="#candidatura" style="padding:.7rem 1.2rem">Candidati</a>
     </div>
   </div>
 </header>
@@ -313,171 +348,186 @@
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
     <span class="eyebrow reveal">Network di centri specializzati in estetica avanzata</span>
-    <h1 id="hero-title" class="reveal">Vuoi diventare il <span class="accent">centro di riferimento</span> della tua zona per epilazione laser, rimodellamento corpo e anti-age viso?</h1>
-    <p class="reveal">Entra in <strong>Estetica Clienti</strong>, il network di centri specializzati in estetica avanzata, e ricevi ogni settimana nuove clienti già qualificate e pronte a prenotare. Tu ti concentri sui trattamenti: al resto pensiamo noi.</p>
+    <h1 id="hero-title" class="reveal">Diventa il <span class="accent">centro di riferimento</span> della tua zona per epilazione laser, corpo e viso.</h1>
+    <p class="reveal">Entra in <strong>Estetica Clienti</strong>, il network specializzato in estetica avanzata: il nostro <strong>reparto di segreteria</strong> ti fissa in agenda nuove clienti già qualificate ogni settimana, filtrando i perditempo e chi cerca solo il prezzo. Tu ti concentri sui trattamenti.</p>
     <div class="hero-cta reveal">
-      <a class="btn btn-rose btn-lg" href="#candidatura">Candidati ora</a>
+      <a class="btn btn-rose btn-lg" href="#candidatura">Prenota la consulenza gratuita <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn btn-ghost btn-lg" href="#metodo">Scopri come funziona</a>
     </div>
     <div class="stats reveal">
       <div class="stat">
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-        <span class="n">3–8</span><span class="l">Clienti a settimana*</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <span class="n">3–8</span><span class="l">Nuove clienti a settimana*</span>
       </div>
       <div class="stat">
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
-        <span class="n">100%</span><span class="l">Garanzia scritta</span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <span class="n">3 mesi</span><span class="l">Di garanzia sul lavoro</span>
       </div>
       <div class="stat">
-        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 12l2.5 2.5L16 9"/><circle cx="12" cy="12" r="9"/></svg></span>
+        <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 12l2.5 2.5L16 9"/><circle cx="12" cy="12" r="9"/></svg></span>
         <span class="n">0€</span><span class="l">Candidatura gratuita</span>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ SPECIALIZZAZIONI ============ -->
+<section id="specializzazioni" aria-labelledby="spec-t">
+  <div class="wrap vert">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Le nostre specializzazioni</span>
+      <h2 id="spec-t" class="display-upper">Clienti per i tre pilastri dell'estetica avanzata.</h2>
+      <p class="lead">Conosciamo il linguaggio, le obiezioni e i desideri di chi cerca questi trattamenti. Per questo i nostri contatti si trasformano in appuntamenti.</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card reveal">
+        <figure class="fig-a"><span class="fig-note" aria-hidden="true">Foto trattamento</span><span class="tag">Epilazione laser</span></figure>
+        <div class="card-body"><h3>Epilazione laser</h3><p>Clienti in cerca di pelle liscia e definitiva, pronte a valutare pacchetti di sedute ad alto valore.</p></div>
+      </article>
+      <article class="card reveal">
+        <figure class="fig-b"><span class="fig-note" aria-hidden="true">Foto trattamento</span><span class="tag">Rimodellamento corpo</span></figure>
+        <div class="card-body"><h3>Rimodellamento corpo</h3><p>Chi vuole tonificare e rimodellare la silhouette, con percorsi personalizzati e ricorrenti.</p></div>
+      </article>
+      <article class="card reveal">
+        <figure class="fig-c"><span class="fig-note" aria-hidden="true">Foto trattamento</span><span class="tag">Anti-age viso</span></figure>
+        <div class="card-body"><h3>Anti-age viso</h3><p>Clienti attente alla cura del viso e alla prevenzione: il segmento più fedele e ad alto scontrino.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ METODO ============ -->
-<section id="metodo" aria-labelledby="metodo-t">
+<section id="metodo" class="alt" aria-labelledby="metodo-t">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Come funziona</span>
       <h2 id="metodo-t" class="display-upper">Il nostro metodo per portarti clienti nell'estetica avanzata.</h2>
     </div>
-    <div class="grid cols-3">
-      <article class="card reveal">
-        <span class="num" aria-hidden="true">01</span>
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>Analisi del territorio e del pubblico</h3>
-        <p>Studiamo la tua zona e individuiamo chi ha realmente bisogno di epilazione laser, rimodellamento corpo o anti-age viso.</p>
-      </article>
-      <article class="card reveal">
-        <span class="num" aria-hidden="true">02</span>
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 15l2 2 4-4"/></svg></div>
-        <h3>Gestione completa degli appuntamenti</h3>
-        <p>Contattiamo, qualifichiamo e fissiamo per te gli appuntamenti direttamente in agenda. Filtriamo i perditempo.</p>
-      </article>
-      <article class="card reveal">
-        <span class="num" aria-hidden="true">03</span>
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
-        <h3>La cliente arriva al tuo centro</h3>
-        <p>Gestiamo reminder e follow-up per assicurarci che la cliente si presenti puntuale al trattamento.</p>
-      </article>
+    <div class="steps">
+      <div class="step reveal"><h3>Analisi del territorio</h3><p>Studiamo la tua zona e individuiamo chi ha realmente bisogno di epilazione laser, rimodellamento corpo o anti-age viso.</p></div>
+      <div class="step reveal"><h3>Gestione degli appuntamenti</h3><p>Contattiamo, qualifichiamo e fissiamo per te gli appuntamenti direttamente in agenda. Filtriamo i perditempo.</p></div>
+      <div class="step reveal"><h3>La cliente arriva al tuo centro</h3><p>Gestiamo reminder e recap giornalieri per assicurarci che la cliente si presenti puntuale al trattamento.</p></div>
     </div>
-    <div style="text-align:center;margin-top:2.6rem" class="reveal">
-      <a class="btn btn-rose btn-lg" href="#candidatura">Candidati ora</a>
-      <p class="form-note" style="margin-top:.8rem">Candidatura gratuita e senza impegno</p>
+    <div style="text-align:center;margin-top:2.4rem" class="reveal">
+      <a class="btn btn-rose btn-lg" href="#candidatura">Prenota la consulenza gratuita <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </section>
 
-<!-- ============ TESTIMONIANZE ============ -->
-<section id="testimonianze" class="alt" aria-labelledby="test-t">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Testimonianze</span>
-      <h2 id="test-t" class="display-upper">I risultati dei centri che hanno già installato Estetica Clienti.</h2>
-      <p class="lead">Segnaposto: qui andranno i video-racconto dei tuoi centri clienti, come nel modello Ottica Clienti.</p>
-    </div>
-    <div class="videos">
-      <div class="video-card reveal">
-        <div class="video-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3v18h18"/><path d="M19 9l-5 5-4-4-4 4"/></svg> Agenda piena tutto l'anno — Centro Esempio 1</div>
-        <div class="video-embed"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="ph">Video da inserire</span></div>
-      </div>
-      <div class="video-card reveal">
-        <div class="video-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 3v18h18"/><path d="M19 9l-5 5-4-4-4 4"/></svg> Fatturato raddoppiato — Centro Esempio 2</div>
-        <div class="video-embed"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="ph">Video da inserire</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ GARANZIA ============ -->
-<section id="garanzia" aria-labelledby="garanzia-t">
-  <div class="wrap">
-    <div class="guarantee reveal">
-      <div class="guar-grid">
-        <div class="guar-text">
-          <span class="eyebrow">La nostra promessa</span>
-          <h2 id="garanzia-t" class="display-upper" style="color:#F4E9EC">Garanzia scritta e verificabile.</h2>
-          <p><strong>Non basiamo il nostro lavoro sulle promesse. Lo basiamo su ciò che possiamo documentare.</strong></p>
-          <p>Nel nostro settore abbondano belle presentazioni e numeri poco verificabili — ma questo non paga le bollette del tuo centro né i tuoi macchinari.</p>
-          <p>Lavoriamo solo con chi ha le basi per crescere davvero dentro il Network. E se ti diciamo «andiamo avanti», lo facciamo con un impegno preciso e scritto: una <strong>garanzia chiara</strong> sugli appuntamenti che ti portiamo.</p>
-          <a class="btn btn-rose" href="#candidatura">Candidati ora</a>
-        </div>
-        <div class="contract">
-          <div class="contract-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-            <h4>Art. — Garanzia</h4>
-          </div>
-          <p>La presente garanzia opera esclusivamente nei casi in cui, al termine del periodo iniziale di collaborazione, il Fornitore non abbia adempiuto agli obblighi contrattuali relativi alla generazione e fornitura di appuntamenti effettivi e verificabili presso i punti vendita del Cliente.</p>
-          <p>In tale ipotesi, il Cliente avrà diritto al rimborso fino a concorrenza dell'investimento iniziale sostenuto. L'adempimento del Fornitore si considera regolarmente eseguito qualora gli appuntamenti siano stati generati e messi a disposizione del Cliente, a prescindere dall'esito delle attività di gestione, conversione o vendita interna di competenza del Cliente.</p>
-          <p style="opacity:.75;font-style:italic">Testo di esempio adattato dal contratto Ottica Clienti — da validare con il tuo consulente legale.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SERVIZI (Cos'è) ============ -->
-<section id="servizi" class="alt" aria-labelledby="servizi-t">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">I nostri servizi</span>
-      <h2 id="servizi-t" class="display-upper">Cos'è Estetica Clienti.</h2>
-      <p class="lead">Un'infrastruttura completa al servizio del tuo centro: attrae, qualifica e prenota nuove clienti al posto tuo.</p>
-    </div>
-    <div class="grid cols-4">
-      <article class="card reveal">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 11l19-9-9 19-2-8z"/></svg></div>
-        <h3>Studio del bacino d'utenza</h3>
-        <p>Analizziamo il territorio e individuiamo le clienti più adatte per l'estetica avanzata.</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <h3>Contatto diretto con le potenziali clienti</h3>
-        <p>Gestiamo noi la comunicazione iniziale: ascoltiamo le esigenze e verifichiamo l'interesse reale.</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-        <h3>Agenda organizzata per te</h3>
-        <p>Inseriamo in agenda solo appuntamenti confermati, senza interruzioni o imprevisti.</p>
-      </article>
-      <article class="card reveal">
-        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M20 8v6M23 11h-6"/></svg></div>
-        <h3>Metodo adattato al tuo centro</h3>
-        <p>Ogni attività è modellata sulla tua specializzazione, senza format rigidi.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ INFRASTRUTTURA ============ -->
-<section id="infrastruttura" aria-labelledby="infra-t">
-  <div class="wrap infra">
+<!-- ============ WHATSAPP / IL SERVIZIO ============ -->
+<section id="whatsapp" aria-labelledby="wa-t">
+  <div class="wrap chatwrap">
     <div class="reveal">
-      <span class="eyebrow">L'infrastruttura</span>
-      <h2 id="infra-t" class="display-upper" style="margin:.9rem 0 1rem">Un'intera squadra. <span class="accent">In una sola chat.</span></h2>
-      <p class="lead">Niente cinque fornitori da coordinare. Commerciali, segretarie, reparto video, marketing e un referente dedicato: tutto raggiungibile scrivendo a un unico contatto WhatsApp.</p>
-      <ul class="infra-list" style="margin-top:1.6rem">
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>Reparto commerciale e segretariato</b><span>Richiamano, qualificano e prenotano i contatti al posto tuo.</span></div></li>
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>Reparto video e creatività</b><span>Contenuti professionali che valorizzano il tuo centro e i tuoi trattamenti.</span></div></li>
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>Marketing e gestione campagne</b><span>Advertising mirato all'estetica avanzata, ottimizzato sui risultati reali.</span></div></li>
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>Formazione del tuo staff</b><span>Il centro non dipende più solo da te: formiamo il team alla vendita e all'accoglienza.</span></div></li>
+      <span class="eyebrow">Tutto in una chat</span>
+      <h2 id="wa-t" class="display-upper" style="margin:.85rem 0 1rem">Confermiamo e ricapitoliamo i tuoi appuntamenti, <span class="accent">giorno per giorno.</span></h2>
+      <p class="lead">Niente cinque fornitori da coordinare e niente troupe in negozio. Tu hai un unico contatto WhatsApp con noi: la nostra segreteria conferma ogni appuntamento con te e ti manda il recap della giornata, così sai sempre chi arriva e quando.</p>
+      <ul class="chat-list">
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>Ogni lead richiamato e qualificato</strong> dalla nostra segreteria interna, prima che arrivi a te.</div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>Recap giornaliero degli appuntamenti</strong> direttamente in chat: nomi, orari e trattamento.</div></li>
+        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></span><div><strong>Reminder e riprogrammazioni gestiti da noi</strong>, per ridurre al minimo i mancati appuntamenti.</div></li>
       </ul>
     </div>
-    <div class="infra-visual reveal" aria-hidden="true">
-      <div class="vhead">Estetica Clienti · chat</div>
-      <div class="chatline"><span class="av">EC</span><div class="bub">Buongiorno! Oggi hai 3 nuove prenotazioni per l'epilazione laser 💫</div></div>
-      <div class="chatline me"><div class="bub">Perfetto, le confermo tutte</div></div>
-      <div class="chatline"><span class="av">EC</span><div class="bub">Il reparto video passa giovedì per i contenuti del mese. Ti va bene alle 15?</div></div>
-      <div class="chatline me"><div class="bub">Sì, ci siamo 👍</div></div>
-      <div class="chatline"><span class="av">EC</span><div class="bub">Ottimo. Report prenotazioni e incassi della settimana in arrivo 📈</div></div>
+    <div class="phone reveal" aria-label="Esempio di chat WhatsApp con il recap degli appuntamenti">
+      <div class="phone-top">
+        <span class="phone-av" aria-hidden="true">EC</span>
+        <div><div class="phone-name">Estetica Clienti</div><div class="phone-status">Segreteria · online</div></div>
+      </div>
+      <div class="day-sep">Lunedì</div>
+      <div class="chatline them"><div class="bub">Buongiorno! 💫 Recap di oggi: <b>3 appuntamenti confermati</b><br>• 10:00 — Sara R. · epilazione laser<br>• 15:30 — Giulia M. · anti-age viso<br>• 17:00 — Elena P. · rimodellamento<span class="t">08:12</span></div></div>
+      <div class="chatline me"><div class="bub">Perfetto, le aspetto tutte 👍<span class="t">08:20</span></div></div>
+      <div class="day-sep">Martedì</div>
+      <div class="chatline them"><div class="bub">Recap di domani pronto: <b>4 nuove clienti</b> in agenda. Ti confermo Chiara alle 11 per la prima seduta laser?<span class="t">18:04</span></div></div>
+      <div class="chatline me"><div class="bub">Sì, confermo ✅<span class="t">18:07</span></div></div>
+      <div class="chatline them"><div class="bub">Ottimo 🙌 Report prenotazioni della settimana in arrivo 📈<span class="t">18:08</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARE ============ -->
+<section class="alt" aria-labelledby="cmp-t">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="pill">Perché sceglierci</span>
+      <h2 id="cmp-t" class="display-upper" style="margin-top:1rem"><span class="accent">Estetica Clienti</span> vs altre agenzie.</h2>
+    </div>
+    <div class="compare">
+      <div class="cmp-card reveal">
+        <div class="cmp-head"><span class="cmp-badge ok" aria-hidden="true">✓</span><span class="cmp-title accent">Estetica Clienti</span></div>
+        <ul class="cmp-list">
+          <li><span class="cmp-ic ok" aria-hidden="true">✓</span><div><b>Clienti per l'estetica avanzata</b><span>Laser, rimodellamento, anti-age — non contatti generici.</span></div></li>
+          <li><span class="cmp-ic ok" aria-hidden="true">✓</span><div><b>Segreteria dedicata che qualifica</b><span>Chiama ogni lead, filtra i curiosi e fissa l'appuntamento già confermato in agenda.</span></div></li>
+          <li><span class="cmp-ic ok" aria-hidden="true">✓</span><div><b>Risultati tracciabili e verificabili</b><span>Saprai sempre quante clienti ti abbiamo portato.</span></div></li>
+          <li><span class="cmp-ic ok" aria-hidden="true">✓</span><div><b>Specializzazione esclusiva nell'estetica</b><span>Metodo costruito lavorando solo con centri estetici.</span></div></li>
+          <li><span class="cmp-ic ok" aria-hidden="true">✓</span><div><b>Garanzia di 3 mesi</b><span>Se non sei soddisfatto lavoriamo GRATIS fino al raggiungimento degli obiettivi.</span></div></li>
+        </ul>
+      </div>
+      <div class="cmp-card cmp-them reveal">
+        <div class="cmp-head"><span class="cmp-badge no" aria-hidden="true">✕</span><span class="cmp-title no">Altre agenzie</span></div>
+        <ul class="cmp-list">
+          <li><span class="cmp-ic no" aria-hidden="true">✕</span><div><b>Aumentano i like</b><span>Post e grafiche per follower, non per clienti.</span></div></li>
+          <li><span class="cmp-ic no" aria-hidden="true">✕</span><div><b>Lead grezzi non qualificati</b><span>Ti girano numeri: richiami e qualifichi tu.</span></div></li>
+          <li><span class="cmp-ic no" aria-hidden="true">✕</span><div><b>Risultati approssimativi</b><span>Non tracciano i dati, ROI fumoso.</span></div></li>
+          <li><span class="cmp-ic no" aria-hidden="true">✕</span><div><b>Marketing generico</b><span>Trattano estetica, ristoranti e palestre allo stesso modo.</span></div></li>
+          <li><span class="cmp-ic no" aria-hidden="true">✕</span><div><b>Nessuna garanzia</b><span>Promesse enormi e nessuno che risponde nel momento del bisogno.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVIZI 360 ============ -->
+<section id="servizi" aria-labelledby="servizi-t">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Il metodo a 360°</span>
+      <h2 id="servizi-t" class="display-upper">Un ecosistema completo che porta clienti nel tuo centro.</h2>
+      <p class="lead" style="margin-inline:auto">Dallo studio del territorio alla cliente in poltrona: ci occupiamo noi di ogni passaggio.</p>
+    </div>
+    <div class="grid cols-3">
+      <article class="card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 0 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Studio del bacino d'utenza</h3>
+        <p>Analizziamo il territorio del tuo centro e individuiamo le clienti più adatte all'estetica avanzata: chi cerca epilazione laser, rimodellamento o percorsi anti-age.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>Contatto e qualifica</h3>
+        <p>Gestiamo noi la comunicazione iniziale: ascoltiamo le esigenze, verifichiamo l'interesse reale per il trattamento e filtriamo i curiosi che cercano solo il prezzo.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 15l2 2 4-4"/></svg></div>
+        <h3>Segreteria dedicata</h3>
+        <p>Una segretaria del nostro reparto interno chiama ogni lead, fissa l'appuntamento confermato nella tua agenda e ti manda il recap giornaliero. I perditempo non arrivano mai a te.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GARANZIA + RICONVERSIONE ============ -->
+<section id="garanzia" class="alt" aria-labelledby="garanzia-t">
+  <div class="wrap">
+    <div class="guar-grid">
+      <div class="guar reveal">
+        <div class="shield" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <span class="eyebrow">La nostra promessa</span>
+        <h2 id="garanzia-t" class="display-upper">Garanzia di <span style="color:#EDBEC6">3 mesi.</span></h2>
+        <p>Offriamo a tutti i nuovi centri partner una garanzia sulla qualità del lavoro.</p>
+        <blockquote class="quote">«Se al termine del periodo di collaborazione non sei soddisfatto, lavoreremo per te GRATIS fino al raggiungimento degli obiettivi.»</blockquote>
+        <a class="btn btn-rose btn-lg" href="#candidatura">Prenota la consulenza gratuita <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="riconv reveal">
+        <div class="riconv-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg> Riconversione</div>
+        <h3>Hai già speso soldi in agenzie deludenti?</h3>
+        <p>Se in passato hai avuto brutte esperienze con altre agenzie di marketing, abbiamo una politica di riconversione unica nel settore estetico.</p>
+        <div class="credit"><span class="euro" aria-hidden="true">€</span><span>Ottieni un credito da spendere nei nostri servizi.</span></div>
+        <p style="font-size:.92rem">Ne parliamo nella consulenza gratuita: valutiamo la tua situazione e ti diciamo con onestà se possiamo aiutarti.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ============ TEAM ============ -->
-<section id="team" class="alt" aria-labelledby="team-t">
+<section id="team" aria-labelledby="team-t">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Chi siamo</span>
@@ -489,12 +539,12 @@
       <div class="team-card reveal"><div class="team-photo" aria-hidden="true">EC</div><h3 class="team-name">Nome Cognome</h3><p class="team-role">Direzione strategica</p></div>
       <div class="team-card reveal"><div class="team-photo" aria-hidden="true">EC</div><h3 class="team-name">Nome Cognome</h3><p class="team-role">Reparto segreteria</p></div>
     </div>
-    <p class="form-note center reveal" style="text-align:center;margin-top:1.6rem">Segnaposto: inserisci foto, nomi e ruoli reali del team.</p>
+    <p class="form-note reveal" style="text-align:center;margin-top:1.5rem">Segnaposto: inserisci foto, nomi e ruoli reali del team.</p>
   </div>
 </section>
 
 <!-- ============ FAQ ============ -->
-<section id="faq" aria-labelledby="faq-t">
+<section class="alt" id="faq" aria-labelledby="faq-t">
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Domande frequenti</span>
@@ -502,39 +552,41 @@
     </div>
     <div class="faq">
       <details class="reveal"><summary>Lavorate con qualsiasi centro estetico? <span class="plus" aria-hidden="true">+</span></summary><p>Lavoriamo solo con centri di estetica avanzata che offrono epilazione laser, rimodellamento corpo o anti-age viso e che hanno la struttura per gestire nuove clienti. Prima di partire facciamo un'analisi: se non possiamo portarti risultati, te lo diciamo subito.</p></details>
-      <details class="reveal"><summary>In cosa siete diversi dalle altre agenzie? <span class="plus" aria-hidden="true">+</span></summary><p>Non vendiamo pubblicità isolata. Ti diamo un'infrastruttura completa — commerciali, segretarie, video, marketing — e mettiamo la garanzia per iscritto. Misuriamo appuntamenti e incassi, non i like.</p></details>
-      <details class="reveal"><summary>Cosa significa la garanzia scritta? <span class="plus" aria-hidden="true">+</span></summary><p>Concordiamo per iscritto la generazione di appuntamenti effettivi e verificabili. Se al termine del periodo iniziale non li abbiamo forniti, hai diritto al rimborso fino a concorrenza dell'investimento iniziale. I dettagli esatti sono nel contratto.</p></details>
-      <details class="reveal"><summary>Quanto tempo serve per vedere i primi contatti? <span class="plus" aria-hidden="true">+</span></summary><p>Dopo l'attivazione del sistema i primi contatti qualificati arrivano in genere entro pochi giorni. La consulenza iniziale serve proprio a definire tempi e aspettative realistiche per il tuo centro.</p></details>
-      <details class="reveal"><summary>Devo occuparmi io del marketing? <span class="plus" aria-hidden="true">+</span></summary><p>No. Te ne occupi il meno possibile: la nostra squadra gestisce tutto e ti aggiorna tramite un unico contatto. Tu ti concentri sui trattamenti e sulle clienti.</p></details>
+      <details class="reveal"><summary>In cosa siete diversi dalle altre agenzie? <span class="plus" aria-hidden="true">+</span></summary><p>Non vendiamo pubblicità isolata. Ti diamo un'infrastruttura completa con una segreteria dedicata che qualifica i contatti e fissa gli appuntamenti, misuriamo i risultati e mettiamo una garanzia di 3 mesi. Contiamo appuntamenti e incassi, non i like.</p></details>
+      <details class="reveal"><summary>Come funziona la garanzia di 3 mesi? <span class="plus" aria-hidden="true">+</span></summary><p>Offriamo una garanzia sulla qualità del lavoro: se al termine del periodo di collaborazione non sei soddisfatto, continuiamo a lavorare per te gratuitamente fino al raggiungimento degli obiettivi concordati.</p></details>
+      <details class="reveal"><summary>Devo occuparmi io del marketing e delle telefonate? <span class="plus" aria-hidden="true">+</span></summary><p>No. La nostra segreteria richiama e qualifica ogni contatto, fissa gli appuntamenti nella tua agenda e ti aggiorna con un recap in chat giorno per giorno. Tu ti concentri sui trattamenti e sulle clienti.</p></details>
+      <details class="reveal"><summary>Ho già speso in agenzie senza risultati: cosa cambia? <span class="plus" aria-hidden="true">+</span></summary><p>Per chi arriva da esperienze deludenti abbiamo una politica di riconversione: puoi ottenere un credito da spendere nei nostri servizi. Ne parliamo nella consulenza gratuita.</p></details>
     </div>
   </div>
 </section>
 
 <!-- ============ CANDIDATURA ============ -->
-<section id="candidatura" class="alt" aria-labelledby="apply-t">
+<section id="candidatura" aria-labelledby="apply-t">
   <div class="wrap apply-grid">
     <div class="reveal">
       <span class="eyebrow">Candidatura gratuita</span>
-      <h2 id="apply-t" class="display-upper" style="margin:.9rem 0 1rem">Scopri se il tuo centro è pronto a riempire l'agenda.</h2>
-      <p class="lead">Raccontaci del tuo centro in un minuto. Ti ricontattiamo per una consulenza gratuita e senza impegno, e ti diciamo con onestà se possiamo aiutarti.</p>
-      <ul class="perks">
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Consulenza gratuita e senza impegno</li>
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Analisi onesta del potenziale del tuo centro</li>
-        <li><span class="chk" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span> Garanzia scritta sugli appuntamenti</li>
-      </ul>
-      <p style="margin-top:1.7rem">Preferisci scrivere subito?
-        <a href="https://wa.me/39XXXXXXXXXX?text=Ciao%2C%20vorrei%20una%20consulenza%20per%20il%20mio%20centro%20estetico" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:600;border-bottom:1px solid var(--accent)">Contattaci su WhatsApp →</a>
+      <h2 id="apply-t" class="display-upper" style="margin:.85rem 0 1rem">Compila il modulo e prenota una consulenza gratuita, senza impegno.</h2>
+      <div class="steps-row">
+        <div class="step-mini"><span class="n">1</span><div>Analizziamo la situazione del tuo centro estetico</div></div>
+        <div class="step-mini"><span class="n">2</span><div>Ti illustriamo la strategia di acquisizione clienti</div></div>
+        <div class="step-mini"><span class="n">3</span><div>Decidi liberamente se entrare nel network</div></div>
+      </div>
+      <p style="margin-top:1.2rem">Preferisci scrivere subito?
+        <a href="https://wa.me/39XXXXXXXXXX?text=Ciao%2C%20vorrei%20una%20consulenza%20per%20il%20mio%20centro%20estetico" target="_blank" rel="noopener" style="color:var(--accent-strong);font-weight:800;border-bottom:2px solid var(--accent)">Contattaci su WhatsApp →</a>
       </p>
     </div>
 
     <form id="leadForm" novalidate>
-      <div class="field"><label for="nome">Nome e cognome</label><input id="nome" name="nome" type="text" autocomplete="name" required placeholder="Es. Giulia Rossi" /></div>
+      <div class="field-row">
+        <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="given-name" required placeholder="Nome" /></div>
+        <div class="field"><label for="cognome">Cognome</label><input id="cognome" name="cognome" type="text" autocomplete="family-name" required placeholder="Cognome" /></div>
+      </div>
       <div class="field-row">
         <div class="field"><label for="centro">Nome del centro</label><input id="centro" name="centro" type="text" required placeholder="Es. Bellezza & Benessere" /></div>
         <div class="field"><label for="citta">Città</label><input id="citta" name="citta" type="text" autocomplete="address-level2" required placeholder="Es. Milano" /></div>
       </div>
       <div class="field-row">
-        <div class="field"><label for="tel">Telefono / WhatsApp</label><input id="tel" name="tel" type="tel" autocomplete="tel" required placeholder="+39 ..." /></div>
+        <div class="field"><label for="tel">Cellulare / WhatsApp</label><input id="tel" name="tel" type="tel" autocomplete="tel" required placeholder="+39 ..." /></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="tua@email.it" /></div>
       </div>
       <div class="field">
@@ -544,8 +596,7 @@
           <option>Epilazione laser</option><option>Rimodellamento corpo</option><option>Anti-age viso</option><option>Più di uno</option>
         </select>
       </div>
-      <div class="field"><label for="msg">Qual è la tua sfida più grande adesso? (opzionale)</label><textarea id="msg" name="msg" rows="3" placeholder="Es. agenda poco piena nei mesi estivi…"></textarea></div>
-      <button class="btn btn-primary btn-lg" type="submit" style="width:100%;justify-content:center">Invia la candidatura</button>
+      <button class="btn btn-rose btn-lg btn-full" type="submit">Invia la candidatura</button>
       <p class="form-note" id="formMsg" role="status" aria-live="polite">Ti ricontattiamo entro 24 ore lavorative. I tuoi dati sono trattati secondo il GDPR.</p>
     </form>
   </div>
@@ -559,18 +610,18 @@
         <a class="brand brand-lg" href="#top"><span class="l1">Estetica</span><span class="l2">Clienti</span></a>
         <div class="rule" style="max-width:260px;margin:.9rem 0 .4rem"><i></i></div>
         <div class="brand-tag">Marketing per centri estetici</div>
-        <p style="margin-top:1rem;max-width:34ch;color:rgba(244,233,236,.68);font-size:.92rem">Il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso.</p>
+        <p style="margin-top:1rem;max-width:34ch;color:rgba(244,233,236,.72);font-size:.92rem">Il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso.</p>
       </div>
       <div class="foot-col">
         <h5 class="foot-title">Contatti</h5>
-        <p><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> info@esteticaclienti.it</p>
+        <p><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> info@esteticaclienti.it</p>
         <p><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 14.96L2 22l5.2-1.36A9.9 9.9 0 1 0 12.04 2Z"/></svg> +39 XXX XXX XXXX</p>
         <p style="opacity:.6;font-size:.8rem">Segnaposto — inserisci i contatti reali.</p>
       </div>
       <div class="foot-col">
         <h5 class="foot-title">Seguici</h5>
         <div class="foot-social">
-          <a href="https://www.instagram.com/estetica.clienti/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.instagram.com/estetica.clienti/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg></a>
           <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2 1.6 3.6 3.6 3.9V10c-1.4 0-2.7-.4-3.6-1.1V15a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3z"/></svg></a>
         </div>
@@ -607,7 +658,7 @@
   if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});
-    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    },{threshold:.1,rootMargin:'0px 0px -6% 0px'});
     els.forEach(function(el){io.observe(el);});
   }else{els.forEach(function(el){el.classList.add('in');});}
   document.getElementById('year').textContent=new Date().getFullYear();
@@ -618,13 +669,12 @@
     if(!form.checkValidity()){form.reportValidity();return;}
     var d=new FormData(form);
     var txt='Nuova candidatura Estetica Clienti%0A'+
-      'Nome: '+encodeURIComponent(d.get('nome')||'')+'%0A'+
+      'Nome: '+encodeURIComponent((d.get('nome')||'')+' '+(d.get('cognome')||''))+'%0A'+
       'Centro: '+encodeURIComponent(d.get('centro')||'')+'%0A'+
       'Città: '+encodeURIComponent(d.get('citta')||'')+'%0A'+
-      'Tel: '+encodeURIComponent(d.get('tel')||'')+'%0A'+
+      'Cellulare: '+encodeURIComponent(d.get('tel')||'')+'%0A'+
       'Email: '+encodeURIComponent(d.get('email')||'')+'%0A'+
-      'Trattamento: '+encodeURIComponent(d.get('servizio')||'')+'%0A'+
-      'Note: '+encodeURIComponent(d.get('msg')||'');
+      'Trattamento: '+encodeURIComponent(d.get('servizio')||'');
     msg.textContent='Perfetto! Ti stiamo reindirizzando su WhatsApp per completare l\'invio…';
     window.open('https://wa.me/39XXXXXXXXXX?text='+txt,'_blank','noopener');
     form.reset();
