@@ -118,6 +118,8 @@
       radial-gradient(90% 65% at -10% 120%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 55%),
       var(--bg)}
   .hero .wrap{padding-block:clamp(1.4rem,3.5vw,3rem) clamp(2.6rem,6vw,4.5rem)}
+  .hero-logo{display:inline-flex;background:#fff;border-radius:16px;padding:.6rem 1.1rem;box-shadow:var(--shadow);margin-bottom:1.4rem}
+  .hero-logo img{height:clamp(82px,12vw,120px);width:auto;max-width:100%}
   .hero h1{margin:.85rem 0 1.15rem;max-width:19ch}
   .hero h1 .accent{font-style:italic}
   .hero p{font-size:clamp(1.06rem,1.5vw,1.28rem);color:var(--muted);max-width:56ch;font-weight:500}
@@ -347,6 +349,8 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
+    <span class="hero-logo reveal"><img src="assets/logo.png" alt="Estetica Clienti — Marketing per centri estetici" width="300" height="300" onerror="this.closest('.hero-logo').style.display='none'" /></span>
+    <br>
     <span class="eyebrow reveal">Network di centri specializzati in estetica avanzata</span>
     <h1 id="hero-title" class="reveal">Diventa il <span class="accent">centro di riferimento</span> della tua zona per epilazione laser, corpo e viso.</h1>
     <p class="reveal">Entra in <strong>Estetica Clienti</strong>, il network specializzato in estetica avanzata: il nostro <strong>reparto di segreteria</strong> ti fissa in agenda nuove clienti già qualificate ogni settimana, filtrando i perditempo e chi cerca solo il prezzo. Tu ti concentri sui trattamenti.</p>
