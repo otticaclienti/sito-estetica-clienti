@@ -61,7 +61,7 @@
     -webkit-font-smoothing:antialiased;overflow-x:hidden}
   .wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
   section{padding-block:clamp(3rem,7vw,5.5rem)}
-  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balance}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.05;text-wrap:balance;overflow-wrap:break-word}
   h1{font-size:clamp(2.25rem,5.4vw,4.1rem);letter-spacing:.004em}
   h2{font-size:clamp(1.95rem,4.2vw,3.15rem);letter-spacing:.004em}
   h3{font-size:clamp(1.2rem,2vw,1.5rem);font-weight:700}
@@ -97,9 +97,9 @@
   .brand .l1,.brand .l2{font-size:1.02rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;padding-left:.32em}
   .brand .l1{color:var(--text)}.brand .l2{color:var(--accent-strong)}
   .brand-lg .l1,.brand-lg .l2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:.3em}
-  .nav-logo{display:block;height:46px;width:auto;background:#fff;border-radius:9px;padding:4px 9px}
-  @media(max-width:480px){.nav-logo{height:40px;padding:3px 7px}}
-  .foot-logo{display:block;height:96px;width:auto;background:#fff;border-radius:14px;padding:10px 14px}
+  .nav-logo{display:block;height:64px;width:auto;background:#fff;border-radius:10px;padding:5px 12px}
+  @media(max-width:480px){.nav-logo{height:52px;padding:4px 9px}}
+  .foot-logo{display:block;height:104px;width:auto;background:#fff;border-radius:14px;padding:10px 16px}
   .brand-tag{font-family:var(--sans);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:.9rem}
 
   /* ============ NAV ============ */
@@ -121,7 +121,7 @@
       radial-gradient(90% 65% at -10% 120%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 55%),
       var(--bg)}
   .hero .wrap{padding-block:clamp(1.4rem,3.5vw,3rem) clamp(2.6rem,6vw,4.5rem)}
-  .hero h1{margin:.85rem 0 1.15rem;max-width:19ch}
+  .hero h1{margin:.2rem 0 1.15rem;max-width:min(100%,960px)}
   .hero h1 .accent{font-style:italic}
   .hero p{font-size:clamp(1.06rem,1.5vw,1.28rem);color:var(--muted);max-width:56ch;font-weight:500}
   .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.9rem}
@@ -307,20 +307,40 @@
   :target{scroll-margin-top:80px}
 
   /* ============ MOBILE OPTIMISATION ============ */
+  @media(max-width:760px){
+    .nav-inner{gap:.5rem}
+    .nav-cta{gap:.45rem}
+  }
   @media(max-width:640px){
     body{font-weight:500}
-    section{padding-block:2.6rem}
-    .hero .wrap{padding-block:1.1rem 2.4rem}
-    .hero h1{margin:.7rem 0 1rem}
+    section{padding-block:2.5rem}
+    .hero .wrap{padding-block:1rem 2.2rem}
+    .hero h1{margin:.4rem 0 1rem;max-width:100%}
+    .hero p{max-width:100%}
     p{font-weight:500}
     .card p,.step p,.vert .card-body p,.cmp-list span,.riconv p,.guar p{font-weight:500}
     .muted,.lead{color:var(--muted)}
-    .btn{width:100%;max-width:420px}
-    .hero-cta{width:100%}
-    .stat{padding:1.2rem}
-    .cmp-card{padding:1.5rem 1.3rem}
-    .phone{border-width:5px;padding:1.15rem .9rem}
+    .btn{width:100%;max-width:100%}
+    .hero-cta{width:100%;gap:.7rem}
+    .stat{padding:1.2rem;flex-direction:row;align-items:center;gap:.9rem}
+    .stat .ico{margin-bottom:0}
+    .stat .n{font-size:1.7rem}
+    .stat .l{font-size:.8rem}
+    .sec-head{margin-bottom:1.6rem}
+    .cmp-card{padding:1.4rem 1.2rem}
+    .cmp-title{font-size:1.25rem}
+    .phone{border-width:5px;padding:1.1rem .85rem;max-width:100%}
+    .steps-row{margin:1.1rem 0}
+    .team-card{padding:1.6rem 1.2rem}
+    .foot-logo{height:88px}
     .foot-legal{flex-direction:column}
+    summary{font-size:1.06rem}
+  }
+  @media(max-width:400px){
+    :root{--pad:1rem}
+    .nav-logo{height:46px;padding:3px 7px}
+    .btn{font-size:.8rem;letter-spacing:.03em;padding:.95rem 1rem}
+    .btn-lg{padding:1rem 1rem}
   }
 </style>
 </head>
@@ -353,7 +373,6 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
-    <span class="eyebrow reveal">Network di centri specializzati in estetica avanzata</span>
     <h1 id="hero-title" class="reveal">Diventa il <span class="accent">centro di riferimento</span> della tua zona per epilazione laser, corpo e viso.</h1>
     <p class="reveal">Entra in <strong>Estetica Clienti</strong>, il network specializzato in estetica avanzata: il nostro <strong>reparto di segreteria</strong> ti fissa in agenda nuove clienti già qualificate ogni settimana, filtrando i perditempo e chi cerca solo il prezzo. Tu ti concentri sui trattamenti.</p>
     <div class="hero-cta reveal">
