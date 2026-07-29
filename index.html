@@ -97,6 +97,9 @@
   .brand .l1,.brand .l2{font-size:1.02rem;letter-spacing:.32em;text-transform:uppercase;font-weight:700;padding-left:.32em}
   .brand .l1{color:var(--text)}.brand .l2{color:var(--accent-strong)}
   .brand-lg .l1,.brand-lg .l2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:.3em}
+  .nav-logo{display:block;height:46px;width:auto;background:#fff;border-radius:9px;padding:4px 9px}
+  @media(max-width:480px){.nav-logo{height:40px;padding:3px 7px}}
+  .foot-logo{display:block;height:96px;width:auto;background:#fff;border-radius:14px;padding:10px 14px}
   .brand-tag{font-family:var(--sans);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:.9rem}
 
   /* ============ NAV ============ */
@@ -118,8 +121,6 @@
       radial-gradient(90% 65% at -10% 120%,color-mix(in srgb,var(--gold) 16%,transparent),transparent 55%),
       var(--bg)}
   .hero .wrap{padding-block:clamp(1.4rem,3.5vw,3rem) clamp(2.6rem,6vw,4.5rem)}
-  .hero-logo{display:block;width:max-content;max-width:100%;background:#fff;border-radius:18px;padding:.4rem;box-shadow:var(--shadow);margin-bottom:1.5rem;overflow:hidden}
-  .hero-logo img{height:clamp(96px,13vw,150px);width:auto;max-width:100%;border-radius:14px}
   .hero h1{margin:.85rem 0 1.15rem;max-width:19ch}
   .hero h1 .accent{font-style:italic}
   .hero p{font-size:clamp(1.06rem,1.5vw,1.28rem);color:var(--muted);max-width:56ch;font-weight:500}
@@ -328,7 +329,10 @@
 <!-- ============ NAV ============ -->
 <header class="nav" id="top">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Estetica Clienti — home"><span class="l1">Estetica</span><span class="l2">Clienti</span></a>
+    <a class="brand" href="#top" aria-label="Estetica Clienti — home">
+      <img src="assets/logo.png" alt="Estetica Clienti" class="nav-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
+      <span style="display:none"><span class="l1">Estetica</span><span class="l2">Clienti</span></span>
+    </a>
     <nav class="nav-links" aria-label="Principale">
       <a href="#specializzazioni">Trattamenti</a>
       <a href="#metodo">Come funziona</a>
@@ -349,7 +353,6 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap">
-    <span class="hero-logo reveal"><img src="assets/logo.png" alt="Estetica Clienti — Marketing per centri estetici" width="300" height="300" onerror="this.closest('.hero-logo').style.display='none'" /></span>
     <span class="eyebrow reveal">Network di centri specializzati in estetica avanzata</span>
     <h1 id="hero-title" class="reveal">Diventa il <span class="accent">centro di riferimento</span> della tua zona per epilazione laser, corpo e viso.</h1>
     <p class="reveal">Entra in <strong>Estetica Clienti</strong>, il network specializzato in estetica avanzata: il nostro <strong>reparto di segreteria</strong> ti fissa in agenda nuove clienti già qualificate ogni settimana, filtrando i perditempo e chi cerca solo il prezzo. Tu ti concentri sui trattamenti.</p>
@@ -610,10 +613,11 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <a class="brand brand-lg" href="#top"><span class="l1">Estetica</span><span class="l2">Clienti</span></a>
-        <div class="rule" style="max-width:260px;margin:.9rem 0 .4rem"><i></i></div>
-        <div class="brand-tag">Marketing per centri estetici</div>
-        <p style="margin-top:1rem;max-width:34ch;color:rgba(244,233,236,.72);font-size:.92rem">Il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso.</p>
+        <a class="brand" href="#top" aria-label="Estetica Clienti — home">
+          <img src="assets/logo.png" alt="Estetica Clienti — Marketing per centri estetici" class="foot-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
+          <span class="brand-lg" style="display:none"><span class="l1">Estetica</span><span class="l2">Clienti</span></span>
+        </a>
+        <p style="margin-top:1.1rem;max-width:34ch;color:rgba(244,233,236,.72);font-size:.92rem">Il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo e anti-age viso.</p>
       </div>
       <div class="foot-col">
         <h5 class="foot-title">Contatti</h5>
