@@ -32,5 +32,5 @@ Il sito su GitHub Pages si aggiorna da solo in circa 1 minuto.
 
 ## Altre immagini (opzionali)
 
-- Foto trattamenti (epilazione laser / rimodellamento / anti-age) per la sezione "Specializzazioni".
+- Foto trattamenti (epilazione laser / rimodellamento / anti-age / dermopigmentazione) per la sezione "Specializzazioni".
 - Foto del team per la sezione "Il team".
