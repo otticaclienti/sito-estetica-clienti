@@ -219,6 +219,16 @@
   .cmp-ic.ok{background:var(--ok-soft);color:var(--ok)}.cmp-ic.no{background:var(--red-soft);color:var(--red)}
   .cmp-list b{font-weight:800;color:var(--text)}
   .cmp-list span{display:block;color:var(--muted);font-size:.9rem;font-weight:500;margin-top:.1rem}
+  /* video testimonial */
+  .vt-wrap{max-width:820px;margin-inline:auto}
+  .vt-frame{position:relative;aspect-ratio:16/9;border-radius:calc(var(--r) + 4px);overflow:hidden;box-shadow:var(--shadow);background:#000}
+  .vt-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  /* partner */
+  .partners{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem 2rem;align-items:center;max-width:960px;margin-inline:auto}
+  @media(min-width:620px){.partners{grid-template-columns:repeat(3,1fr)}}
+  @media(min-width:960px){.partners{grid-template-columns:repeat(6,1fr)}}
+  .partner-logo{font-family:var(--serif);font-weight:700;text-align:center;color:var(--muted);font-size:1.05rem;letter-spacing:.05em;opacity:.7;text-transform:uppercase;transition:opacity .2s,color .2s}
+  .partner-logo:hover{opacity:1;color:var(--accent-strong)}
 
   /* garanzia */
   .guar-grid{display:grid;gap:1.4rem;align-items:stretch}
@@ -361,6 +371,7 @@
       <a href="#specializzazioni">Trattamenti</a>
       <a href="#metodo">Come funziona</a>
       <a href="#whatsapp">Il servizio</a>
+      <a href="#testimonianze">Testimonianze</a>
       <a href="#garanzia">Garanzia</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -475,8 +486,24 @@
   </div>
 </section>
 
+<!-- ============ TESTIMONIANZE ============ -->
+<section id="testimonianze" class="alt" aria-labelledby="test-t">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">Testimonianze</span>
+      <h2 id="test-t" class="display-upper">La voce di chi lavora con noi.</h2>
+      <p class="lead" style="margin-inline:auto">Il racconto diretto di chi ha gi&agrave; scelto Estetica Clienti per far crescere il proprio centro.</p>
+    </div>
+    <div class="vt-wrap reveal">
+      <div class="vt-frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/K_RZo8gMftM" title="Videotestimonianza — Estetica Clienti" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ COMPARE ============ -->
-<section class="alt" aria-labelledby="cmp-t">
+<section aria-labelledby="cmp-t">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="pill">Perché sceglierci</span>
@@ -508,7 +535,7 @@
 </section>
 
 <!-- ============ SERVIZI 360 ============ -->
-<section id="servizi" aria-labelledby="servizi-t">
+<section id="servizi" class="alt" aria-labelledby="servizi-t">
   <div class="wrap">
     <div class="sec-head center reveal">
       <span class="eyebrow">Il metodo a 360°</span>
@@ -532,6 +559,25 @@
         <p>Una segretaria del nostro reparto interno chiama ogni lead, fissa l'appuntamento confermato nella tua agenda e ti manda il recap giornaliero. I perditempo non arrivano mai a te.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- ============ PARTNER ============ -->
+<section id="partner" aria-labelledby="partner-t">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow">I nostri partner</span>
+      <h2 id="partner-t" class="display-upper">I centri del network lavorano con i migliori brand del settore.</h2>
+    </div>
+    <div class="partners reveal">
+      <span class="partner-logo">Brand 1</span>
+      <span class="partner-logo">Brand 2</span>
+      <span class="partner-logo">Brand 3</span>
+      <span class="partner-logo">Brand 4</span>
+      <span class="partner-logo">Brand 5</span>
+      <span class="partner-logo">Brand 6</span>
+    </div>
+    <p class="form-note reveal" style="text-align:center;margin-top:1.6rem">Segnaposto — sostituisci con i loghi o i nomi reali dei brand partner.</p>
   </div>
 </section>
 
