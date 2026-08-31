@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="icon" href="assets/logo.png" type="image/png" />
+<link rel="icon" href="assets/logo-premium.png" type="image/png" />
 <title>Estetica Premium — Network di centri specializzati in estetica avanzata</title>
 <meta name="description" content="Estetica Premium è il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo, anti-age viso e dermo-pigmentazione. Nuovi clienti già qualificati, con garanzia di 3 mesi." />
 <link rel="canonical" href="https://estetica-premium.it/" />
-<meta name="theme-color" content="#0d0a0c" />
+<meta name="theme-color" content="#f1ede7" />
 <meta property="og:title" content="Estetica Premium — Network di centri specializzati in estetica avanzata" />
 <meta property="og:description" content="Diventa il centro di riferimento della tua zona per epilazione laser, rimodellamento corpo, anti-age viso e dermo-pigmentazione. Candidatura gratuita e senza impegno." />
 <meta property="og:type" content="website" />
@@ -468,6 +468,84 @@
   @media(max-width:860px){.hero-grid{grid-template-columns:1fr}.hero h1{max-width:11ch}.hero-stage{height:520px;min-height:0}.orbit{width:min(88vw,480px)}}
   @media(max-width:520px){.hero{min-height:auto}.hero .wrap{padding-top:2.5rem}.hero h1{font-size:clamp(3rem,15vw,4.8rem)}.hero-stage{height:430px}.dash-card{width:92%;padding:1.1rem}.float-pill.one{right:0}.float-pill.two{left:0}.hero-proof{align-items:flex-start}}
   @media(prefers-reduced-motion:reduce){.dash-card,.float-pill{animation:none}}
+
+  /* ============ BRAND PALETTE — AVORIO / BORDEAUX ============ */
+  :root,:root[data-theme="light"],:root[data-theme="dark"]{
+    --ivory-brand:#f1ede7;--ivory-deep:#e9e1da;--wine:#471926;--wine-deep:#3d0d1b;
+    --blush:#c9b2b3;--blush-soft:#e6d8d5;--bg:var(--ivory-brand);--bg-alt:#ebe4de;
+    --surface:#f8f4ef;--text:var(--wine);--muted:#7f6469;--line:rgba(71,25,38,.13);
+    --accent:var(--wine);--accent-strong:var(--wine-deep);--hair:var(--blush);
+    --shadow:0 28px 70px -34px rgba(71,25,38,.35);
+  }
+  body{background:var(--ivory-brand);background-image:radial-gradient(circle at 83% 16%,rgba(201,178,179,.35),transparent 26%),radial-gradient(circle at 8% 54%,rgba(255,255,255,.6),transparent 25%);color:var(--wine)}
+  header.nav{background:rgba(241,237,231,.82);border-color:rgba(71,25,38,.09);box-shadow:0 8px 30px rgba(71,25,38,.03)}
+  .nav-links a{color:#73575e}.nav-links a:hover{color:var(--wine)}
+  .logo-crop{position:relative;display:block;overflow:hidden;flex:none;background:#f1ede7}
+  .logo-crop img{position:absolute;display:block;max-width:none;height:auto}
+  .logo-crop.nav-mark{width:116px;height:60px;border-radius:3px}
+  .logo-crop.nav-mark img{width:154px;left:-20px;top:-21px}
+  .btn-primary{background:var(--wine);color:var(--ivory-brand);box-shadow:0 12px 30px -18px rgba(71,25,38,.7)}
+  .btn-primary:hover{background:var(--wine-deep);color:#fff}
+  .btn-rose{color:var(--ivory-brand);background:linear-gradient(145deg,#5a2030,#3d0d1b);box-shadow:0 16px 38px -17px rgba(71,25,38,.7)}
+  .btn-rose:hover{background:#5e2032;color:#fff}
+  .btn-ghost{color:var(--wine);border-color:rgba(71,25,38,.2)}.btn-ghost:hover{border-color:var(--wine);color:var(--wine-deep)}
+  .hero{background:transparent}.hero::before{background:radial-gradient(circle,rgba(201,178,179,.38),transparent 65%)}
+  .hero-kicker{color:#76565e}.hero-kicker::before{background:var(--wine);box-shadow:0 0 0 7px rgba(71,25,38,.08),0 0 22px rgba(71,25,38,.2)}
+  .hero h1{color:var(--wine)}.hero h1 .accent{background:linear-gradient(115deg,#471926 5%,#8b4d5c 78%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p,.hero-proof{color:#80676c}.hero p strong{color:var(--wine-deep)}
+  .proof-faces i{border-color:var(--ivory-brand);background:linear-gradient(145deg,#fff8f2,#9c6974)}.proof-faces i:nth-child(2){background:linear-gradient(145deg,#f4e6de,#774350)}.proof-faces i:nth-child(3){background:linear-gradient(145deg,#f1dfe0,#9d6772)}
+  .orbit{border-color:rgba(71,25,38,.17);box-shadow:0 0 80px rgba(71,25,38,.08),inset 0 0 60px rgba(201,178,179,.16)}
+  .orbit::before,.orbit::after{border-color:rgba(71,25,38,.13)}.orbit::after{background:radial-gradient(circle,rgba(201,178,179,.48),rgba(71,25,38,.05) 48%,transparent 70%)}
+  .dash-card{background:linear-gradient(145deg,rgba(255,252,248,.94),rgba(234,224,218,.9));border-color:rgba(71,25,38,.13);box-shadow:24px 42px 80px -30px rgba(71,25,38,.38),inset 1px 1px 0 rgba(255,255,255,.9)}
+  .dash-brand{color:var(--wine)}.dash-brand i{background:linear-gradient(145deg,#6b2a3c,#3d0d1b);box-shadow:0 8px 22px rgba(71,25,38,.22)}.live{color:#7b4050}
+  .dash-number{color:var(--wine)}.dash-label,.dash-mini span{color:#8b7075}.chart{border-color:rgba(71,25,38,.11)}.chart i{background:linear-gradient(to top,rgba(71,25,38,.15),#6c2d3f);box-shadow:0 -8px 24px rgba(71,25,38,.08)}
+  .dash-mini{background:rgba(255,255,255,.43);border-color:rgba(71,25,38,.08);color:var(--wine)}
+  .float-pill{color:#80676c;background:rgba(250,246,241,.89);border-color:rgba(71,25,38,.12);box-shadow:0 22px 48px rgba(71,25,38,.16)}.float-pill b{color:var(--wine)}.float-pill .dot{background:var(--wine);box-shadow:0 0 12px rgba(71,25,38,.3)}
+  .dash-brand i{display:grid;place-items:center;color:#f1ede7;font-family:var(--serif);font-size:.6rem;font-style:normal}
+
+  /* Ivory 3D surfaces */
+  ::selection{background:var(--wine);color:var(--ivory-brand)}
+  section{border-color:rgba(71,25,38,.065)}
+  .alt{background:linear-gradient(180deg,rgba(255,255,255,.25),transparent),var(--ivory-deep)}
+  h1,h2,h3,strong{color:var(--wine)}
+  .accent{color:var(--wine-deep)}
+  .eyebrow{color:#7f4a58}.eyebrow::before{background:linear-gradient(90deg,var(--wine),var(--blush))}
+  .lead{color:#806a6e}
+  .signal-bar{background:rgba(255,255,255,.25);border-color:rgba(71,25,38,.1)}
+  .signal{border-color:rgba(71,25,38,.1)}.signal strong{color:var(--wine)}.signal span{color:#80676c}
+  .card{background:linear-gradient(145deg,#faf7f2,#e9e0da);border-color:rgba(71,25,38,.12);box-shadow:18px 26px 62px -35px rgba(71,25,38,.38),inset 1px 1px 0 rgba(255,255,255,.9)}
+  .card::after{background:linear-gradient(120deg,transparent 25%,rgba(255,255,255,.7) 47%,transparent 68%)}
+  .card:hover{border-color:rgba(71,25,38,.24);box-shadow:22px 38px 78px -38px rgba(71,25,38,.45)}
+  .card h3{color:var(--wine)}.card p,.vert .card-body p{color:#826a70}
+  .fig-a{background:radial-gradient(circle at 34% 23%,#fff9f2 0,transparent 17%),linear-gradient(145deg,#d3b2b6,#6d3041)}
+  .fig-b{background:radial-gradient(circle at 69% 24%,#fff9f2 0,transparent 18%),linear-gradient(145deg,#e1c9c0,#9a6972)}
+  .fig-c{background:radial-gradient(circle at 32% 70%,#fff9f2 0,transparent 18%),linear-gradient(145deg,#cdb4b8,#74404e)}
+  .fig-d{background:radial-gradient(circle at 70% 68%,#fff9f2 0,transparent 18%),linear-gradient(145deg,#b7838d,#4b1927)}
+  .vert figure::before{border-color:rgba(255,255,255,.5);box-shadow:0 16px 42px rgba(71,25,38,.2),inset 0 0 32px rgba(255,255,255,.22)}
+  .vert figure .tag{color:var(--wine);background:rgba(241,237,231,.92)}
+  .steps::before{background:linear-gradient(90deg,transparent,var(--blush),var(--wine),transparent)}
+  .step{background:linear-gradient(145deg,rgba(255,255,255,.58),rgba(231,220,214,.74));border-color:rgba(71,25,38,.11);box-shadow:14px 22px 52px -38px rgba(71,25,38,.34)}
+  .step::before{color:var(--wine);background:#f6f1eb;border-color:rgba(71,25,38,.22);box-shadow:0 13px 32px rgba(71,25,38,.12)}.step h3{color:var(--wine)}.step p{color:#806a6f}
+  .chat-list li{color:#715a60;background:rgba(255,255,255,.34);border-color:rgba(71,25,38,.1);box-shadow:10px 16px 40px -32px rgba(71,25,38,.35)}.chat-list strong{color:var(--wine)}.chat-list .chk{background:rgba(71,25,38,.08);color:var(--wine)}
+  .phone{color:var(--ivory-brand);background:linear-gradient(145deg,#5a2030,#300b17);border-color:#2b0813;box-shadow:24px 38px 82px -25px rgba(71,25,38,.5),-1px -1px 0 rgba(255,255,255,.3)}.phone::before{background:radial-gradient(circle,rgba(201,178,179,.42),transparent 62%)}.phone-av{background:linear-gradient(145deg,#ead9d6,#c9b2b3);color:var(--wine)}
+  .chatline.them .bub{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.15)}.chatline.me .bub{background:#f0e7e1;color:var(--wine)}.chatline.me .bub .t{color:#806a6f}
+  .vt-frame{border-color:rgba(71,25,38,.14);box-shadow:22px 42px 90px -38px rgba(71,25,38,.44),0 0 80px -58px rgba(71,25,38,.35)}
+  .pill{background:rgba(71,25,38,.065);color:var(--wine);border-color:rgba(71,25,38,.15)}
+  .cmp-card{background:linear-gradient(145deg,#fbf7f2,#e8ded8);border-color:rgba(71,25,38,.14);box-shadow:18px 30px 70px -42px rgba(71,25,38,.4)}.cmp-them{background:linear-gradient(145deg,#eadbd9,#d9c5c3);border-color:rgba(71,25,38,.12)}
+  .cmp-badge.ok{background:var(--wine)}.cmp-badge.no{background:#9b6872}.cmp-ic.ok{background:rgba(71,25,38,.08);color:var(--wine)}.cmp-ic.no{background:rgba(126,76,87,.09);color:#85505b}.cmp-title.no{color:#7b4854}.cmp-list b{color:var(--wine)}.cmp-list span{color:#826d71}
+  .card .ico{color:var(--wine);background:linear-gradient(145deg,rgba(201,178,179,.35),rgba(255,255,255,.3));border-color:rgba(71,25,38,.1)}
+  .guar{background:radial-gradient(circle at 84% 7%,rgba(255,255,255,.13),transparent 28%),linear-gradient(145deg,#5c2132,#350b18);border-color:rgba(71,25,38,.18);box-shadow:20px 36px 78px -32px rgba(71,25,38,.5)}.guar h2,.guar strong{color:#fff}.guar p{color:#eadeda}.guar .eyebrow{color:#e5cfd0}.shield{background:rgba(255,255,255,.11)}.quote{background:rgba(255,255,255,.075);border-left-color:var(--blush)}
+  .riconv{background:linear-gradient(145deg,#fbf8f3,#e8dfd8);border-color:rgba(71,25,38,.12);box-shadow:18px 32px 72px -40px rgba(71,25,38,.4)}.riconv h3{color:var(--wine)}.riconv p{color:#7d666c}.riconv-head{color:var(--wine)}.credit{color:var(--wine);background:rgba(71,25,38,.06);border-color:rgba(71,25,38,.12)}.credit .euro{background:var(--wine)}
+  .faq details{background:linear-gradient(145deg,rgba(255,255,255,.55),rgba(231,221,215,.62));border-color:rgba(71,25,38,.1);box-shadow:12px 18px 45px -38px rgba(71,25,38,.35)}.faq details[open]{background:#f7f1eb;border-color:rgba(71,25,38,.2)}.faq details p{color:#806a6f}summary{color:var(--wine)}
+  .step-mini{color:var(--wine);background:rgba(255,255,255,.38);border-color:rgba(71,25,38,.1);box-shadow:10px 15px 36px -32px rgba(71,25,38,.35)}.step-mini .n{color:var(--ivory-brand);background:linear-gradient(145deg,#5b2232,#3d0d1b)}
+  form{background:linear-gradient(145deg,#fbf8f3,#e6dcd5);border-color:rgba(71,25,38,.13);box-shadow:24px 42px 90px -38px rgba(71,25,38,.43),inset 1px 1px 0 rgba(255,255,255,.9)}
+  input,select{color:var(--wine);background:rgba(255,255,255,.5);border-color:rgba(71,25,38,.14)}input::placeholder{color:#9d888c}select option{background:#f1ede7}.field label{color:var(--wine)}.form-note{color:#806a6f}
+  footer{color:var(--ivory-brand);background:linear-gradient(155deg,#4d1727,#310a16);border-color:rgba(255,255,255,.09)}footer .foot-col p{color:#e7d9d6}.foot-title{color:#fff}.foot-legal{color:#d8c4c2}.foot-social a{background:rgba(255,255,255,.06)}
+  .logo-crop.footer-mark{width:270px;height:150px;border-radius:4px}.logo-crop.footer-mark img{width:369px;left:-49px;top:-49px}
+  .wa-float{background:linear-gradient(145deg,#5b2232,#3d0d1b);border-color:rgba(255,255,255,.22);box-shadow:0 18px 44px -16px rgba(71,25,38,.62)}
+  .tilt-3d{transform-style:preserve-3d;will-change:transform;transition:transform .22s cubic-bezier(.2,.7,.2,1),box-shadow .25s,border-color .25s}.tilt-3d>*{transform:translateZ(7px)}
+  @media(max-width:760px){.signal{border-color:rgba(71,25,38,.1)}.logo-crop.footer-mark{width:220px;height:122px}.logo-crop.footer-mark img{width:301px;left:-40px;top:-40px}}
+  @media(max-width:480px){.logo-crop.nav-mark{width:98px;height:51px}.logo-crop.nav-mark img{width:130px;left:-17px;top:-18px}}
 </style>
 </head>
 <body>
@@ -476,8 +554,7 @@
 <header class="nav" id="top">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="Estetica Premium — home">
-      <img src="assets/logo.png" alt="Estetica Premium" class="nav-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
-      <span style="display:none"><span class="l1">Estetica</span><span class="l2">Premium</span></span>
+      <span class="logo-crop nav-mark"><img src="assets/logo-premium.png" alt="Estetica Premium" /></span>
     </a>
     <nav class="nav-links" aria-label="Principale">
       <a href="#specializzazioni">Trattamenti</a>
@@ -513,7 +590,7 @@
       <div class="hero-stage reveal" aria-label="Dashboard tridimensionale degli appuntamenti generati">
         <div class="orbit" aria-hidden="true"></div>
         <div class="dash-card">
-          <div class="dash-top"><span class="dash-brand"><i></i> Estetica Premium</span><span class="live">Demo</span></div>
+          <div class="dash-top"><span class="dash-brand"><i>EP</i> Estetica Premium</span><span class="live">Demo</span></div>
           <div class="dash-label">Nuovi clienti a settimana</div>
           <div class="dash-number">3–8</div>
           <div class="chart" aria-hidden="true"><i style="--h:28%"></i><i style="--h:42%"></i><i style="--h:36%"></i><i style="--h:59%"></i><i style="--h:51%"></i><i style="--h:78%"></i><i style="--h:96%"></i></div>
@@ -773,10 +850,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-col">
-        <a class="brand" href="#top" aria-label="Estetica Premium — home">
-          <img src="assets/logo.png" alt="Estetica Premium — Marketing per centri estetici" class="foot-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-flex'" />
-          <span class="brand-lg" style="display:none"><span class="l1">Estetica</span><span class="l2">Premium</span></span>
-        </a>
+        <a class="brand" href="#top" aria-label="Estetica Premium — home"><span class="logo-crop footer-mark"><img src="assets/logo-premium.png" alt="Estetica Premium" /></span></a>
         <p style="margin-top:1.1rem;max-width:34ch;color:rgba(244,233,236,.72);font-size:.92rem">Il network di centri specializzati in estetica avanzata: epilazione laser, rimodellamento corpo, anti-age viso e dermo-pigmentazione.</p>
       </div>
       <div class="foot-col">
@@ -827,6 +901,18 @@
       stage.style.setProperty('--rx',(.5-((e.clientY-r.top)/r.height))*4+'deg');
     });
     stage.addEventListener('pointerleave',function(){stage.style.setProperty('--rx','0deg');stage.style.setProperty('--ry','0deg');});
+  }
+  if(window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.card,.step,.cmp-card,.riconv,.guar,.phone,.vt-frame').forEach(function(panel){
+      panel.classList.add('tilt-3d');
+      panel.addEventListener('pointermove',function(e){
+        var r=panel.getBoundingClientRect();
+        var ry=(((e.clientX-r.left)/r.width)-.5)*5;
+        var rx=(.5-((e.clientY-r.top)/r.height))*4;
+        panel.style.transform='perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-3px)';
+      });
+      panel.addEventListener('pointerleave',function(){panel.style.transform='';});
+    });
   }
   var els=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
