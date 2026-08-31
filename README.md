@@ -4,6 +4,8 @@ Landing page one-page per **Estetica Premium**, il network di centri specializza
 (epilazione laser, rimodellamento corpo, anti-age viso). Struttura e funnel ispirati al modello Ottica Clienti,
 con brand identity (crema / nero / rosa cipria / oro) presa dal profilo Instagram `@estetica.clienti`.
 
+Dominio ufficiale: **https://estetica-premium.it/**
+
 ## File
 
 - `index.html` — sito completo, **statico e self-contained** (nessuna dipendenza esterna: niente CDN, niente font remoti).
