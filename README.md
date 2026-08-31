@@ -1,6 +1,6 @@
-# Estetica Clienti — sito
+# Estetica Premium — sito
 
-Landing page one-page per **Estetica Clienti**, il network di centri specializzati in estetica avanzata
+Landing page one-page per **Estetica Premium**, il network di centri specializzati in estetica avanzata
 (epilazione laser, rimodellamento corpo, anti-age viso). Struttura e funnel ispirati al modello Ottica Clienti,
 con brand identity (crema / nero / rosa cipria / oro) presa dal profilo Instagram `@estetica.clienti`.
 
@@ -23,7 +23,7 @@ python3 -m http.server 8000
 2. **Come funziona** — metodo in 3 step (01/02/03)
 3. **Testimonianze** — segnaposto per i video-racconto dei centri clienti
 4. **Garanzia** — promessa + estratto contratto (Art. Garanzia)
-5. **Servizi** — «Cos'è Estetica Clienti» (4 card)
+5. **Servizi** — «Cos'è Estetica Premium» (4 card)
 6. **Infrastruttura** — la squadra «in una sola chat»
 7. **Team** — segnaposto foto/nomi/ruoli
 8. **FAQ**
