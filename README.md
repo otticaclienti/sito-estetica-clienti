@@ -1,57 +1,48 @@
 # Estetica Premium — sito
 
-Landing page one-page per **Estetica Premium**, il network di centri specializzati in estetica avanzata
-(epilazione laser, rimodellamento corpo, anti-age viso). Struttura e funnel ispirati al modello Ottica Clienti,
-con brand identity (crema / nero / rosa cipria / oro) presa dal profilo Instagram `@estetica.clienti`.
+Landing page corporate ad alta conversione per **Estetica Premium**, specializzata in marketing e acquisizione clienti per centri di estetica avanzata.
 
 Dominio ufficiale: **https://estetica-premium.it/**
 
-## File
+## Struttura
 
-- `index.html` — sito completo, **statico e self-contained** (nessuna dipendenza esterna: niente CDN, niente font remoti).
+Il sito è statico e composto da un solo `index.html`, senza framework o dipendenze esterne. Font, logo e immagini social sono ospitati localmente in `assets/`.
 
-## Come vederlo in locale
+La pagina segue questo percorso:
 
-Basta aprire `index.html` in un browser. In alternativa, con un server locale:
+1. Offerta iniziale: primo mese di gestione gratuito
+2. Problema del modello “lead e poi arrangiati”
+3. Sistema completo Estetica Premium
+4. Processo dalla pubblicità all'appuntamento
+5. Beauty Consultant
+6. Focus su laser, viso anti-age e corpo
+7. Produzione contenuti semplificata
+8. Differenziali Estetica Premium
+9. Caso studio Giada
+10. Prova di 30 giorni
+11. Criteri di accesso
+12. FAQ
+13. Form di candidatura con invio WhatsApp
+
+## Configurazione commerciale
+
+All'inizio dello script in `index.html` è presente `SITE_CONFIG`:
+
+- `selectedCenters`: numero di centri ammessi alla prova. Lasciare `null` per mostrare soltanto “centri selezionati”.
+- `vimeoId`: ID della VSL Vimeo. La sezione e il player restano nascosti finché non viene inserito un ID reale.
+
+## Anteprima locale
 
 ```bash
 python3 -m http.server 8000
-# poi apri http://localhost:8000
 ```
 
-## Struttura della pagina
+Poi aprire `http://localhost:8000`.
 
-1. **Hero** — «Vuoi diventare il centro di riferimento della tua zona per…?» + 3 stat (3–8 clienti/sett., garanzia scritta, candidatura gratuita)
-2. **Come funziona** — metodo in 3 step (01/02/03)
-3. **Testimonianze** — segnaposto per i video-racconto dei centri clienti
-4. **Garanzia** — promessa + estratto contratto (Art. Garanzia)
-5. **Servizi** — «Cos'è Estetica Premium» (4 card)
-6. **Infrastruttura** — la squadra «in una sola chat»
-7. **Team** — segnaposto foto/nomi/ruoli
-8. **FAQ**
-9. **Candidatura** — form di qualificazione + WhatsApp
-10. **Footer** — contatti e social
+## Note
 
-## Da personalizzare (cerca questi segnaposto)
-
-| Cosa | Dove | Nota |
-|------|------|------|
-| Numero WhatsApp | `wa.me/39XXXXXXXXXX` (compare 4 volte) | Sostituisci con il numero reale in formato internazionale senza `+` |
-| Email / telefono footer | sezione `<footer>` | `info@esteticaclienti.it`, `+39 XXX XXX XXXX` |
-| Recap chat WhatsApp | sezione `#whatsapp` | Mockup dei messaggi giornalieri: personalizza nomi/orari o sostituisci con screenshot reali |
-| Foto/nomi team | sezione `#team` | Inserisci foto reali (sostituendo il cerchio con le iniziali) |
-| Foto trattamenti | sezione `#verticali`/servizi | Sostituisci i gradienti `.fig-a/.fig-b/.fig-c` con immagini reali |
-| Numeri risultati | (rimossi in questa versione, riattivabili) | — |
-| Testo garanzia | sezione `#garanzia` | Da validare con un consulente legale |
-| P.IVA, Privacy, Cookie | footer | Link e dati legali reali |
-| Google Form | CTA «Candidati» | Se vuoi replicare Ottica Clienti, puoi puntare a un Google Form invece del form interno |
-
-## Note tecniche
-
-- **Tema chiaro/scuro** automatico (rispetta il sistema) + toggle manuale in alto a destra.
-- **Responsive** mobile-first.
-- **Accessibilità**: focus visibili, `aria-label`, `prefers-reduced-motion` rispettato.
-- **Font**: stack di sistema serif/sans (nessun webfont da caricare). Per usare i font esatti del brand
-  (es. un serif tipo *Cormorant/Didot* + *Montserrat*), vanno self-hostati e aggiunti via `@font-face`.
-- Il form, senza backend, precompila un messaggio WhatsApp. Per raccogliere i lead in un CRM/email
-  va collegato un endpoint (es. Formspree, Make/n8n, o il Google Form del network).
+- Palette: avorio, bordeaux, cipria e dettagli bronzo.
+- Font self-hosted: Bodoni Moda e Manrope.
+- Il form precompila una candidatura su WhatsApp.
+- Gli eventi vengono inviati a `dataLayer` solo se un sistema di tracking lo ha già inizializzato.
+- Privacy e Cookie nel footer richiedono ancora URL legali definitivi.
