@@ -10,7 +10,7 @@ Il sito è statico e composto da un solo `index.html`, senza framework o dipende
 
 La pagina segue questo percorso:
 
-1. Offerta iniziale: primo mese di gestione gratuito
+1. Presentazione del metodo Estetica Premium
 2. Problema del modello “lead e poi arrangiati”
 3. Sistema completo Estetica Premium
 4. Processo dalla pubblicità all'appuntamento
@@ -19,7 +19,7 @@ La pagina segue questo percorso:
 7. Produzione contenuti semplificata
 8. Differenziali Estetica Premium
 9. Caso studio Giada
-10. Prova di 30 giorni
+10. Collaborazione con il centro
 11. Criteri di accesso
 12. FAQ
 13. Form di candidatura con invio WhatsApp
@@ -28,7 +28,7 @@ La pagina segue questo percorso:
 
 All'inizio dello script in `index.html` è presente `SITE_CONFIG`:
 
-- `selectedCenters`: numero di centri ammessi alla prova. Lasciare `null` per mostrare soltanto “centri selezionati”.
+- `selectedCenters`: numero di centri selezionati per il servizio. Lasciare `null` per mostrare soltanto “centri selezionati”.
 - `vimeoId`: ID della VSL Vimeo. La sezione e il player restano nascosti finché non viene inserito un ID reale.
 
 ## Anteprima locale
