@@ -45,6 +45,6 @@ Poi aprire `http://localhost:8000`.
 - Font self-hosted: Bodoni Moda e Manrope.
 - Il form precompila una candidatura su WhatsApp.
 - Gli eventi vengono inviati a `dataLayer` solo se un sistema di tracking lo ha già inizializzato.
-- `privacy-recruiting.html`: informativa dedicata alle candidature per Estetica Premium, utilizzabile nei moduli Meta. Collegata nel footer come “Privacy recruiting”.
+- `privacy/index.html`: informativa recruiting, pubblicata all’indirizzo `https://estetica-premium.it/privacy/` e collegata nel footer come “Privacy recruiting”. `privacy-recruiting.html` conserva lo stesso testo per compatibilità con il precedente indirizzo; aggiornare entrambi i file quando cambia il contenuto.
 - Conservazione recruiting approvata: fino alla conclusione della selezione, massimo 12 mesi dalla candidatura. La cancellazione dal Google Sheet e dalle altre copie va gestita operativamente dal titolare; il sito non esegue cancellazioni automatiche.
 - La privacy relativa alle richieste commerciali del sito e l’informativa Cookie richiedono ancora una gestione separata: la pagina recruiting non le sostituisce.
