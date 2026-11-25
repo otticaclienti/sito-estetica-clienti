@@ -6,27 +6,13 @@ Dominio ufficiale: **https://estetica-premium.it/**
 
 ## Struttura
 
-Il sito è statico e composto da un solo `index.html`, senza framework o dipendenze esterne. Font, logo e immagini social sono ospitati localmente in `assets/`.
+Il sito è statico e non richiede framework o dipendenze esterne. La home è in `index.html`, con gli stili in `assets/site.css` e il comportamento del modulo in `assets/site.js`. Font, logo e fotografia editoriale sono ospitati localmente.
 
-La pagina segue questo percorso:
-
-1. Presentazione del metodo Estetica Premium
-2. Problema del modello “lead e poi arrangiati”
-3. Sistema completo Estetica Premium
-4. Processo dalla pubblicità all'appuntamento
-5. Beauty Consultant
-6. Focus su laser, viso anti-age e corpo
-7. Produzione contenuti semplificata
-8. Differenziali Estetica Premium
-9. Caso studio Giada
-10. Collaborazione con il centro
-11. Criteri di accesso
-12. FAQ
-13. Form di candidatura con invio WhatsApp
+La pagina presenta il servizio, la Beauty Consultant, il metodo di acquisizione, il caso studio di Giada, i trattamenti supportati e le FAQ. Il pulsante nella prima schermata porta al form di candidatura con invio tramite WhatsApp.
 
 ## Configurazione commerciale
 
-All'inizio dello script in `index.html` è presente `SITE_CONFIG`:
+All'inizio di `assets/site.js` è presente `SITE_CONFIG`:
 
 - `selectedCenters`: numero di centri selezionati per il servizio. Lasciare `null` per mostrare soltanto “centri selezionati”.
 - `vimeoId`: ID della VSL Vimeo. La sezione e il player restano nascosti finché non viene inserito un ID reale.
