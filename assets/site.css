@@ -206,39 +206,84 @@ h1 em, h2 em { font-style: normal; font-weight: inherit; color: var(--rose-light
 
 .showcase {
   display: grid;
-  grid-template-columns: .9fr 1.24fr .9fr;
-  gap: clamp(.7rem, 1.4vw, 1.2rem);
-  margin-top: clamp(1.8rem, 4vw, 3.4rem);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: clamp(.65rem, 1.25vw, 1rem);
+  max-width: 73rem;
+  margin-top: clamp(1.6rem, 2.8vw, 2.55rem);
 }
 .showcase-card {
   position: relative;
   isolation: isolate;
-  display: flex;
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-width: 0;
-  min-height: clamp(12rem, 23vw, 20rem);
-  flex-direction: column;
-  align-items: start;
-  justify-content: end;
+  min-height: clamp(13rem, 22vw, 17.5rem);
+  gap: 1.25rem;
   overflow: hidden;
   border: 1px solid var(--light-line);
-  border-radius: 1.25rem;
-  padding: clamp(.8rem, 2.5vw, 2rem);
+  border-radius: 1.15rem;
+  padding: clamp(.85rem, 1.65vw, 1.35rem);
+  color: var(--paper);
   background: #3E202C;
-  transition: border-color .2s ease, transform .2s ease;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
-.showcase-card:hover { transform: translateY(-4px); border-color: var(--rose-light); }
+.showcase-card:hover, .showcase-card:focus-visible {
+  border-color: var(--rose-light);
+  box-shadow: 0 10px 30px #16081170;
+}
+.showcase-card:focus-visible { outline-offset: -5px; }
 .showcase-campaigns {
-  background: repeating-radial-gradient(ellipse at 90% 0%, transparent 0 19px, #B2838C38 20px 21px, transparent 22px 37px), linear-gradient(35deg, #35101B, #6A3949);
+  background:
+    radial-gradient(ellipse at 7% 94%, #371722 3%, transparent 74%),
+    repeating-radial-gradient(ellipse at 100% 0%, transparent 0 20px, #EAB8C438 21px 22px, transparent 23px 37px),
+    linear-gradient(135deg, #4A2331, #784757);
 }
 .showcase-photo { background: #51333A; }
-.showcase-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 65% 48%; z-index: -2; }
-.showcase-photo::after { position: absolute; inset: 0; z-index: -1; content: ''; background: linear-gradient(transparent 20%, #2D101C 100%); }
-.showcase-case { background: linear-gradient(150deg, #86515D, #35101B 74%); }
-.showcase-type { margin-bottom: .6rem; color: #F4D8DC; font-size: .65rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-.showcase-title { font-size: clamp(1rem, 2vw, 1.8rem); font-weight: 700; line-height: 1.1; letter-spacing: -.04em; }
-.showcase-result { color: var(--rose-light); font: 500 clamp(2.5rem, 6vw, 5.5rem)/.95 var(--serif); letter-spacing: -.08em; }
-.showcase-case .showcase-title { margin-top: .4rem; font-size: clamp(.85rem, 1.4vw, 1.1rem); }
-.showcase-arrow { position: absolute; right: .75rem; top: .7rem; display: grid; place-items: center; width: 1.65rem; aspect-ratio: 1; border: 1px solid var(--light-line); border-radius: 50%; font-size: .8rem; background: #24101996; }
+.showcase-photo img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 69% 53%;
+}
+.showcase-photo::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  background: linear-gradient(4deg, #291019 0%, #29101988 30%, transparent 64%, #2910194D);
+}
+.showcase-case { background: radial-gradient(ellipse at 95% 5%, #875363, transparent 72%), #45222F; }
+.showcase-head { display: flex; justify-content: space-between; align-items: center; gap: .45rem; }
+.showcase-type {
+  padding: .32rem .58rem;
+  border: 1px solid #F0C6CD45;
+  border-radius: 99px;
+  color: #F9E1E4;
+  background: #29131DEB;
+  font-size: .66rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.showcase-arrow {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #F0C6CD45;
+  border-radius: 50%;
+  background: #29131DEB;
+  font: 400 1rem/1 system-ui, sans-serif;
+  transition: background-color .2s ease, color .2s ease;
+}
+.showcase-card:is(:hover, :focus-visible) .showcase-arrow { color: var(--wine-dark); background: var(--rose-light); }
+.showcase-copy { display: grid; align-self: end; gap: .45rem; }
+.showcase-title { font-size: clamp(1.2rem, 2.55vw, 2.25rem); font-weight: 700; line-height: 1.06; letter-spacing: -.055em; }
+.showcase-result { color: var(--rose-light); font: 500 clamp(3rem, 5.85vw, 5.2rem)/.9 var(--serif); letter-spacing: -.065em; }
+.showcase-caption { font-size: clamp(.78rem, 1.3vw, 1rem); line-height: 1.3; }
 
 .services-grid {
   display: grid;
@@ -471,8 +516,19 @@ footer { background: var(--ivory); color: var(--wine); border-top: 1px solid var
   .hero h1 { font-size: clamp(2.45rem, 9.6vw, 4.5rem); }
   .hero-lead { margin-block-start: 1.2rem; }
   .hero-actions { margin-block-start: 1.4rem; }
-  .showcase { width: 100%; padding: .2rem var(--gutter) .5rem; grid-template-columns: repeat(3, minmax(9.25rem, 1fr)); overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-color: #A47883 transparent; scroll-padding-inline: var(--gutter); }
-  .showcase-card { min-height: clamp(10rem, 28vw, 14rem); scroll-snap-align: start; border-radius: .95rem; }
+  .showcase {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(9.75rem, 1fr));
+    padding: .25rem var(--gutter) .6rem;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: #A47883 transparent;
+    scroll-padding-inline: var(--gutter);
+  }
+  .showcase-card { min-height: clamp(10rem, 29vw, 14rem); scroll-snap-align: start; border-radius: .95rem; }
+  .showcase-type { padding-inline: .4rem; font-size: .6rem; }
+  .showcase-arrow { width: 1.55rem; font-size: .8rem; }
   .section-intro, .case-grid, .faq-grid, .application-grid { grid-template-columns: 1fr; }
   .application-visual { display: none; }
   .section-intro { gap: 1rem; }
@@ -484,5 +540,5 @@ footer { background: var(--ivory); color: var(--wine); border-top: 1px solid var
 }
 @media (prefers-reduced-motion: reduce) {
   :root { scroll-behavior: auto; }
-  .button, .play-icon, .showcase-card { transition: none; }
+  .button, .play-icon, .showcase-card, .showcase-arrow { transition: none; }
 }
