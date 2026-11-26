@@ -512,28 +512,36 @@ footer { background: var(--ivory); color: var(--wine); border-top: 1px solid var
   [id] { scroll-margin-block-start: 5.5rem; }
   .header-inner { grid-template-columns: minmax(0, 1fr) auto; min-height: 3.5rem; }
   .nav-links { display: none; }
-  .hero { margin-top: -4.25rem; padding-top: 7.25rem; }
-  .hero h1 { font-size: clamp(2.45rem, 9.6vw, 4.5rem); }
-  .hero-lead { margin-block-start: 1.2rem; }
-  .hero-actions { margin-block-start: 1.4rem; }
-  .showcase {
-    width: 100%;
-    grid-template-columns: repeat(3, minmax(9.75rem, 1fr));
-    padding: .25rem var(--gutter) .6rem;
-    overflow-x: auto;
-    scroll-snap-type: x proximity;
-    scrollbar-width: thin;
-    scrollbar-color: #A47883 transparent;
-    scroll-padding-inline: var(--gutter);
-  }
-  .showcase-card { min-height: clamp(10rem, 29vw, 14rem); scroll-snap-align: start; border-radius: .95rem; }
-  .showcase-type { padding-inline: .4rem; font-size: .6rem; }
+  .hero { margin-top: -4.25rem; padding-top: 6.55rem; }
+  .hero .eyebrow { margin-bottom: .85rem; }
+  .hero h1 { font-size: clamp(2.15rem, 9.6vw, 4.5rem); }
+  .hero-lead { max-width: 42ch; margin-block-start: .9rem; line-height: 1.55; }
+  .hero-actions { gap: .4rem; margin-block-start: 1.15rem; }
+  .hero-actions .button { width: min(100%, 19rem); min-height: 3.35rem; }
+  .hero-actions .text-link { display: inline-grid; min-height: 2.5rem; grid-auto-flow: column; align-items: center; gap: .3rem; }
+  .treatment-links { gap: .3rem; margin-top: .55rem; }
+  .treatment-links a { display: inline-grid; min-height: 2.25rem; place-items: center; padding-inline: .6rem; }
+  .showcase { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1.15rem; }
+  .showcase-card { min-height: clamp(8.75rem, 24vw, 12rem); border-radius: .95rem; }
+  .showcase-type { padding-inline: .4rem; font-size: .62rem; }
   .showcase-arrow { width: 1.55rem; font-size: .8rem; }
   .section-intro, .case-grid, .faq-grid, .application-grid { grid-template-columns: 1fr; }
   .application-visual { display: none; }
   .section-intro { gap: 1rem; }
   .services-grid, .focus-grid { grid-template-columns: 1fr; }
   .service-feature { grid-row: auto; min-height: 17rem; }
+}
+@media (max-width: 600px) {
+  .showcase { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: .6rem; }
+  .showcase-card { gap: .65rem; padding: .7rem; }
+  .showcase-photo img { object-position: 73% 52%; }
+  .showcase-case { grid-column: 1 / -1; min-height: 0; }
+  .showcase-case .showcase-copy {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: baseline;
+    gap: .55rem;
+  }
+  .showcase-result { font-size: clamp(2.6rem, 9.2vw, 3.6rem); }
 }
 @media (max-width: 390px) {
   .field-row { grid-template-columns: 1fr; }
