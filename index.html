@@ -21,7 +21,7 @@
 <meta name="twitter:description" content="Acquisizione clienti e Beauty Consultant per centri di estetica avanzata: laser, viso anti-age e corpo." />
 <meta name="twitter:image" content="https://estetica-premium.it/assets/logo-premium.png" />
 <link rel="stylesheet" href="assets/site.css?v=20261126-avorio" />
-<script src="assets/site.js" defer></script>
+<script src="assets/site.js?v=lead-sheets" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Vai al contenuto</a>
@@ -206,7 +206,7 @@
             <p class="availability" data-offer-note>Collaboriamo con centri selezionati.</p>
           </figcaption>
         </figure>
-        <form class="form-card" id="leadForm" method="post" aria-labelledby="apply-title">
+        <form class="form-card" id="leadForm" method="post" action="https://script.google.com/macros/s/AKfycbzBUy8N1nBFcadJeL9qWfi8HQC4uClhQMzJRPgYGAMmNGTpFNzjEDc9jgQDo_YHkqtxfQ/exec" aria-labelledby="apply-title">
           <div class="form-progress" hidden>
             <p id="formProgress" role="status">Passo 1 di 3</p>
             <span class="progress-bars" aria-hidden="true"><i></i><i></i><i></i></span>
@@ -240,11 +240,11 @@
             <div class="field-row">
               <div class="field">
                 <label for="centro">Nome del centro</label>
-                <input id="centro" name="centro" type="text" autocomplete="organization" required placeholder="Nome del centro" />
+                <input id="centro" name="centro" type="text" maxlength="150" autocomplete="organization" required placeholder="Nome del centro" />
               </div>
               <div class="field">
                 <label for="citta">Città</label>
-                <input id="citta" name="citta" type="text" autocomplete="address-level2" required placeholder="Es. Milano" />
+                <input id="citta" name="citta" type="text" maxlength="150" autocomplete="address-level2" required placeholder="Es. Milano" />
               </div>
             </div>
           </fieldset>
@@ -253,30 +253,32 @@
             <div class="field-row">
               <div class="field">
                 <label for="nome">Nome</label>
-                <input id="nome" name="nome" type="text" autocomplete="given-name" required placeholder="Il tuo nome" />
+                <input id="nome" name="nome" type="text" maxlength="150" autocomplete="given-name" required placeholder="Il tuo nome" />
               </div>
               <div class="field">
                 <label for="cognome">Cognome</label>
-                <input id="cognome" name="cognome" type="text" autocomplete="family-name" required placeholder="Il tuo cognome" />
+                <input id="cognome" name="cognome" type="text" maxlength="150" autocomplete="family-name" required placeholder="Il tuo cognome" />
               </div>
               <div class="field">
                 <label for="tel">Cellulare / WhatsApp</label>
-                <input id="tel" name="tel" type="tel" autocomplete="tel" required placeholder="+39 ..." />
+                <input id="tel" name="tel" type="tel" maxlength="40" autocomplete="tel" required placeholder="+39 ..." />
               </div>
               <div class="field">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required placeholder="nome@email.it" />
+                <input id="email" name="email" type="email" maxlength="254" autocomplete="email" required placeholder="nome@email.it" />
               </div>
             </div>
           </fieldset>
           <div class="form-actions">
             <button class="button form-back" type="button" hidden><span aria-hidden="true">←</span> Indietro</button>
             <button class="button button-primary form-next" type="submit" hidden>Continua <span aria-hidden="true">→</span></button>
-            <button class="button button-primary form-submit" type="submit">Continua su WhatsApp <span aria-hidden="true">↗</span></button>
+            <button class="button button-primary form-submit" type="submit">Invia candidatura <span aria-hidden="true">→</span></button>
           </div>
-          <p class="form-note">I dati inseriti vengono precompilati in un messaggio a Estetica Premium. Confermi tu l’invio su WhatsApp.</p>
+          <input type="hidden" name="submissionId" />
+          <div hidden><label>Lascia vuoto questo campo <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
+          <p class="form-note">Useremo i dati per ricontattarti in merito alla candidatura.</p>
           <p class="form-status" id="formStatus" role="status"></p>
-          <a id="whatsappFallback" class="text-link" hidden>Apri il messaggio su WhatsApp <span aria-hidden="true">↗</span></a>
+          <noscript><p class="form-note">Attiva JavaScript per usare il modulo a passaggi.</p></noscript>
         </form>
       </div>
     </section>
